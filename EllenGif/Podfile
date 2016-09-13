@@ -7,5 +7,6 @@ target :EllenGif do
     pod 'Masonry', '0.6.1' #autolayout解析
     pod 'MJRefresh'
     pod 'SDWebImage', '3.7.2' #图片解析
+    pod 'MBProgressHUD'
 
 end

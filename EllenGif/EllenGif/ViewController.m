@@ -80,6 +80,7 @@
 }
 
 -(void)requestData{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     int count = 30+(int)_dataArr.count;
     NSString *url = [NSString stringWithFormat:@"http://images.so.com/j?src=filter_noresult&q=%@&t=d&sn=%d&pn=30&zoom=3",_field.text,count];
     url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -133,7 +134,7 @@
     
     EllenCollectionCell *cell = (EllenCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"EllenCollectionCell" forIndexPath:indexPath];
     NSDictionary *dic = _dataArr[indexPath.item];
-    NSString *url = dic[@"_thumb"];
+    NSString *url = dic[@"thumb"];
     cell.animatedView.animatedImage = nil;
     
 //    [cell.animatedView setGIFImageWithURL:[NSURL URLWithString:url]];
@@ -142,18 +143,36 @@
     NSData *data = [[SDImageCache sharedImageCache]imageDataFromDiskForKey:url];
     if (data) {
         cell.animatedView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:data];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }else{
         
-        [[SDWebImageDownloader sharedDownloader]downloadImageWithURL:[NSURL URLWithString:url] options:SDWebImageDownloaderProgressiveDownload progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
             
-        } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-            if (finished) {
-                GetMainQueue(if(error) return ;
-                             cell.animatedView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:data];
-                             [[SDImageCache sharedImageCache]storeImage:cell.animatedView.animatedImage.posterImage recalculateFromImage:NO imageData:data forKey:url toDisk:YES];
-                             );
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            if ([responseObject isKindOfClass:[NSData class]]) {
+                NSData *data = responseObject;
+                cell.animatedView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:data];
+                [[SDImageCache sharedImageCache]storeImage:cell.animatedView.animatedImage.posterImage recalculateFromImage:NO imageData:data forKey:url toDisk:YES];
             }
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         }];
+        
+//        [[SDWebImageDownloader sharedDownloader]downloadImageWithURL:[NSURL URLWithString:url] options:SDWebImageDownloaderProgressiveDownload progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//            
+//        } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+//            if (finished) {
+//                GetMainQueue(if(error) return ;
+//                             cell.animatedView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:data];
+//                             [[SDImageCache sharedImageCache]storeImage:cell.animatedView.animatedImage.posterImage recalculateFromImage:NO imageData:data forKey:url toDisk:YES];
+//                             );
+//            }
+//        }];
     }
 
 
@@ -171,12 +190,12 @@
     
 
     NSDictionary *dic = _dataArr[indexPath.item];
-    NSString *url = dic[@"_thumb"];
+    NSString *url = dic[@"thumb"];
     
     NSData *emoticonData = [[SDImageCache sharedImageCache]imageDataFromDiskForKey:url];
     
    EllenCollectionCell *cell = (EllenCollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
-    UIImage *thumbImage = cell.animatedView.currentFrame;
+    UIImage *thumbImage = cell.animatedView.animatedImage.posterImage;
     [WXApiRequestHandler sendEmotionData:emoticonData
                               ThumbImage:thumbImage
                                  InScene:WXSceneSession];
