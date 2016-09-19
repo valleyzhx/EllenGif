@@ -28,7 +28,7 @@
 }
 
 -(void)initUI{
-    _animatedView = [[FLAnimatedImageView alloc] init];
+    _animatedView = [[YYAnimatedImageView alloc] init];
     [self.contentView addSubview:_animatedView];
     [_animatedView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.contentView);

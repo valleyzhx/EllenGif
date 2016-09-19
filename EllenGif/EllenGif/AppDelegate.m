@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [WXApi registerApp:@"wxd930ea5d5a258f4f" withDescription:@"demo 2.0"];
+    [WXApi registerApp:@"wxb91a01c1075596b6" withDescription:@"EllenGif"];
 
     return YES;
 }

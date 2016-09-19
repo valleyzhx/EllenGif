@@ -10,6 +10,6 @@
 
 @interface EllenCollectionCell : UICollectionViewCell
 
-@property (nonatomic,strong) FLAnimatedImageView *animatedView;
+@property (nonatomic,strong) UIImageView *animatedView;
 
 @end

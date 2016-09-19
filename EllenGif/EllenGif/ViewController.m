@@ -135,45 +135,37 @@
     EllenCollectionCell *cell = (EllenCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"EllenCollectionCell" forIndexPath:indexPath];
     NSDictionary *dic = _dataArr[indexPath.item];
     NSString *url = dic[@"thumb"];
-    cell.animatedView.animatedImage = nil;
+    cell.animatedView.image = nil;
+    [cell.animatedView yy_setImageWithURL:[NSURL URLWithString:url] options:YYWebImageOptionProgressive|YYWebImageOptionIgnoreAnimatedImage];
     
 //    [cell.animatedView setGIFImageWithURL:[NSURL URLWithString:url]];
     
     
-    NSData *data = [[SDImageCache sharedImageCache]imageDataFromDiskForKey:url];
-    if (data) {
-        cell.animatedView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:data];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    }else{
-        
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-            
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            
-            if ([responseObject isKindOfClass:[NSData class]]) {
-                NSData *data = responseObject;
-                cell.animatedView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:data];
-                [[SDImageCache sharedImageCache]storeImage:cell.animatedView.animatedImage.posterImage recalculateFromImage:NO imageData:data forKey:url toDisk:YES];
-            }
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-        }];
-        
-//        [[SDWebImageDownloader sharedDownloader]downloadImageWithURL:[NSURL URLWithString:url] options:SDWebImageDownloaderProgressiveDownload progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//    NSData *data = [[SDImageCache sharedImageCache]imageDataFromDiskForKey:url];
+//    if (data) {
+//        cell.animatedView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:data];
+//        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//    }else{
+//        
+//        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//        [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
 //            
-//        } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-//            if (finished) {
-//                GetMainQueue(if(error) return ;
-//                             cell.animatedView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:data];
-//                             [[SDImageCache sharedImageCache]storeImage:cell.animatedView.animatedImage.posterImage recalculateFromImage:NO imageData:data forKey:url toDisk:YES];
-//                             );
+//        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//            
+//            if ([responseObject isKindOfClass:[NSData class]]) {
+//                NSData *data = responseObject;
+//                cell.animatedView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:data];
+//                [[SDImageCache sharedImageCache]storeImage:cell.animatedView.animatedImage.posterImage recalculateFromImage:NO imageData:data forKey:url toDisk:YES];
 //            }
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            
+//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
 //        }];
-    }
+    
+
+//    }
 
 
     
@@ -195,7 +187,7 @@
     NSData *emoticonData = [[SDImageCache sharedImageCache]imageDataFromDiskForKey:url];
     
    EllenCollectionCell *cell = (EllenCollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
-    UIImage *thumbImage = cell.animatedView.animatedImage.posterImage;
+    UIImage *thumbImage = cell.animatedView.image;
     [WXApiRequestHandler sendEmotionData:emoticonData
                               ThumbImage:thumbImage
                                  InScene:WXSceneSession];

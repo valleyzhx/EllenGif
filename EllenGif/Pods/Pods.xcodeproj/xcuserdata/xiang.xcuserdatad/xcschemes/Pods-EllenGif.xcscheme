@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6DC789AB43EB7C301C03D4F8DD228140'
+               BlueprintIdentifier = '01D5DBD10FF9DA5D2E6565913F272826'
                BlueprintName = 'Pods-EllenGif'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-EllenGif.a'>

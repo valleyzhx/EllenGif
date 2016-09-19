@@ -22,7 +22,6 @@
 #import "MJRefresh.h"
 #import "UIKit+AFNetworking.h"
 #import "MBProgressHUD.h"
-
-
+#import "YYWebImage.h"
 
 #endif /* PrefixHeader_pch */
