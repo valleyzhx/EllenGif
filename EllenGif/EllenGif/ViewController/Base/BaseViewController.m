@@ -8,7 +8,6 @@
 
 #import "BaseViewController.h"
 #import "MyDefines.h"
-#import "BaseViewController+NaviView.h"
 
 
 #define IS_OS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
@@ -40,6 +39,35 @@
     _naviBar = [self setUpNaviViewWithType:GGNavigationBarTypeNormal];
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
+
+-(GGNavigationBar *)setUpNaviViewWithType:(GGNavigationBarType)type{
+    if (_naviBar) {
+        [_naviBar removeFromSuperview];
+        _naviBar = nil;
+    }
+    GGNavigationBar *view = [[GGNavigationBar alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
+    view.title = self.title;
+    view.backgroundView.backgroundColor = Nav_Color;
+    view.backgroundView.alpha = 1;
+    
+    if (type == GGNavigationBarTypeNormal) {
+        UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
+        [backBtn setImage:[UIImage imageNamed:@"backIcon"] forState:UIControlStateNormal];
+        [backBtn addTarget:self action:@selector(clickedBackAction:) forControlEvents:UIControlEventTouchUpInside];
+        view.leftView = backBtn;
+    }
+    [self.view addSubview:view];
+    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.right.equalTo(self.view);
+        make.top.equalTo(view.mas_bottom);
+    }];
+    return view;
+}
+
+-(void)clickedBackAction:(UIButton*)btn{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 
 

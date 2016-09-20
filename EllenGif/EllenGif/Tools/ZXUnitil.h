@@ -47,7 +47,9 @@
 -(NSString*)jsonString;
 @end
 
+@interface UITextField (TextInset)
 
+@end
 
 
 

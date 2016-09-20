@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		846F7BFEE67DD85C147ED6B1 /* libPods-EllenGif.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF08AF7868EA2B55D0CDD1B0 /* libPods-EllenGif.a */; };
 		F00508311D910B7A009B8CBC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F00508301D910B7A009B8CBC /* ViewController.m */; };
-		F00508391D910BD0009B8CBC /* BaseViewController+NaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = F00508341D910BD0009B8CBC /* BaseViewController+NaviView.m */; };
 		F005083A1D910BD0009B8CBC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F00508361D910BD0009B8CBC /* BaseViewController.m */; };
 		F005083B1D910BD0009B8CBC /* GGNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F00508381D910BD0009B8CBC /* GGNavigationBar.m */; };
 		F00508581D910EA2009B8CBC /* MBProgressHUD+string.m in Sources */ = {isa = PBXBuildFile; fileRef = F005083E1D910EA2009B8CBC /* MBProgressHUD+string.m */; };
@@ -23,6 +22,9 @@
 		F03CC68E1D911053004EEED7 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F03CC6881D911053004EEED7 /* libWeChatSDK.a */; };
 		F03CC68F1D911053004EEED7 /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = F03CC6891D911053004EEED7 /* read_me.txt */; };
 		F03CC6901D911053004EEED7 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = F03CC68A1D911053004EEED7 /* README.txt */; };
+		F03CC6931D911138004EEED7 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03CC6921D911138004EEED7 /* MainTabBarController.m */; };
+		F03CC6961D9118B0004EEED7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03CC6951D9118B0004EEED7 /* HomeViewController.m */; };
+		F03CC6991D912972004EEED7 /* GifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03CC6981D912972004EEED7 /* GifViewController.m */; };
 		F045819F1D76AD1700C3FDB7 /* EllenCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F045819E1D76AD1700C3FDB7 /* EllenCollectionCell.m */; };
 		F04581C61D76BCD600C3FDB7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04581C51D76BCD600C3FDB7 /* Security.framework */; };
 		F04581C81D76BCE300C3FDB7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04581C71D76BCE300C3FDB7 /* CoreTelephony.framework */; };
@@ -43,8 +45,6 @@
 		DF08AF7868EA2B55D0CDD1B0 /* libPods-EllenGif.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EllenGif.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F005082F1D910B7A009B8CBC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F00508301D910B7A009B8CBC /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F00508331D910BD0009B8CBC /* BaseViewController+NaviView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseViewController+NaviView.h"; sourceTree = "<group>"; };
-		F00508341D910BD0009B8CBC /* BaseViewController+NaviView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseViewController+NaviView.m"; sourceTree = "<group>"; };
 		F00508351D910BD0009B8CBC /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		F00508361D910BD0009B8CBC /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		F00508371D910BD0009B8CBC /* GGNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGNavigationBar.h; sourceTree = "<group>"; };
@@ -72,6 +72,12 @@
 		F03CC68B1D911053004EEED7 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		F03CC68C1D911053004EEED7 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		F03CC68D1D911053004EEED7 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		F03CC6911D911138004EEED7 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		F03CC6921D911138004EEED7 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		F03CC6941D9118B0004EEED7 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		F03CC6951D9118B0004EEED7 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		F03CC6971D912972004EEED7 /* GifViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifViewController.h; sourceTree = "<group>"; };
+		F03CC6981D912972004EEED7 /* GifViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifViewController.m; sourceTree = "<group>"; };
 		F045819B1D76AA4200C3FDB7 /* MyDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDefines.h; sourceTree = "<group>"; };
 		F045819C1D76AA8200C3FDB7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F045819D1D76AD1700C3FDB7 /* EllenCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EllenCollectionCell.h; sourceTree = "<group>"; };
@@ -148,8 +154,8 @@
 		F00508321D910BD0009B8CBC /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				F00508331D910BD0009B8CBC /* BaseViewController+NaviView.h */,
-				F00508341D910BD0009B8CBC /* BaseViewController+NaviView.m */,
+				F03CC6911D911138004EEED7 /* MainTabBarController.h */,
+				F03CC6921D911138004EEED7 /* MainTabBarController.m */,
 				F00508351D910BD0009B8CBC /* BaseViewController.h */,
 				F00508361D910BD0009B8CBC /* BaseViewController.m */,
 				F00508371D910BD0009B8CBC /* GGNavigationBar.h */,
@@ -209,6 +215,10 @@
 		F00508631D910ECC009B8CBC /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				F03CC6941D9118B0004EEED7 /* HomeViewController.h */,
+				F03CC6951D9118B0004EEED7 /* HomeViewController.m */,
+				F03CC6971D912972004EEED7 /* GifViewController.h */,
+				F03CC6981D912972004EEED7 /* GifViewController.m */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -403,9 +413,11 @@
 				F00508581D910EA2009B8CBC /* MBProgressHUD+string.m in Sources */,
 				F005083B1D910BD0009B8CBC /* GGNavigationBar.m in Sources */,
 				F005085D1D910EA2009B8CBC /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
+				F03CC6991D912972004EEED7 /* GifViewController.m in Sources */,
 				F005083A1D910BD0009B8CBC /* BaseViewController.m in Sources */,
+				F03CC6931D911138004EEED7 /* MainTabBarController.m in Sources */,
+				F03CC6961D9118B0004EEED7 /* HomeViewController.m in Sources */,
 				F005085A1D910EA2009B8CBC /* WXApiManager.m in Sources */,
-				F00508391D910BD0009B8CBC /* BaseViewController+NaviView.m in Sources */,
 				F005085E1D910EA2009B8CBC /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
 				F045819F1D76AD1700C3FDB7 /* EllenCollectionCell.m in Sources */,
 				F005085C1D910EA2009B8CBC /* WXApiResponseHandler.m in Sources */,

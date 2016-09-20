@@ -331,6 +331,20 @@ static ZXUnitil *_unitil;
 
 @end
 
+@implementation UITextField (TextInset)
+
+- (CGRect)textRectForBounds:(CGRect)bounds {
+    return CGRectInset(bounds, 10, 0);
+}
+
+// text position
+- (CGRect)editingRectForBounds:(CGRect)bounds {
+    return CGRectInset(bounds, 10, 0);
+}
+
+@end
+
+
 
 
 
