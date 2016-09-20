@@ -14,13 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - FLAnimatedImage (1.0.12)
   - Masonry (0.6.1)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
-  - SDWebImage (3.7.2):
-    - SDWebImage/Core (= 3.7.2)
-  - SDWebImage/Core (3.7.2)
+  - UMengAnalytics (4.1.0)
+  - UMengFeedback (2.3.4)
   - YYCache (1.0.3)
   - YYImage (1.0.3):
     - YYImage/Core (= 1.0.3)
@@ -31,24 +29,24 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
-  - FLAnimatedImage
   - Masonry (= 0.6.1)
   - MBProgressHUD
   - MJRefresh
-  - SDWebImage (= 3.7.2)
+  - UMengAnalytics
+  - UMengFeedback
   - YYWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  UMengAnalytics: 19b28253793d77dff10fb7d502faad1fb6b8ce4a
+  UMengFeedback: 5283cc0e324dffca4dd54c4abb3cbded56487817
   YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
   YYImage: 362f44ffba1fc498f2152060f3bb54ed84600981
   YYWebImage: 0431ed108e104527669b86f75efd58958425cca2
 
-PODFILE CHECKSUM: 7e6e898473326e576ab313b103a2da9688fef5c1
+PODFILE CHECKSUM: c5f54b671ab741dad334c357a97b82aa69a335d1
 
 COCOAPODS: 1.0.0

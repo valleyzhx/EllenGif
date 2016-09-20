@@ -2,12 +2,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, "7.0"
 
 target :EllenGif do
-    pod 'FLAnimatedImage'
     pod 'AFNetworking', '~>3.0'
     pod 'Masonry', '0.6.1' #autolayout解析
     pod 'MJRefresh'
-    pod 'SDWebImage', '3.7.2' #图片解析
     pod 'MBProgressHUD'
     pod 'YYWebImage'
+    pod 'UMengFeedback'
+    pod 'UMengAnalytics'
 
 end
