@@ -9,10 +9,9 @@
 #import "HomeViewController.h"
 #import "EllenCollectionCell.h"
 
-#import "WXApiRequestHandler.h"
-#import "WXApiManager.h"
-
 #import "GifViewController.h"
+
+#define kCount 18
 
 @interface HomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate>{
     UITextField *_field;
@@ -54,6 +53,12 @@
     
     _field.layer.cornerRadius = 5;
     
+    UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
+    lab.textColor = [UIColor whiteColor];
+    lab.text = @"Ellen";
+    lab.font = [UIFont fontWithName:@"Chalkduster" size:13];
+    _naviBar.leftView = lab;
+    
     
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-29, 20, 44, 44)];
     [btn setTitle:@"搜索" forState:UIControlStateNormal];
@@ -63,7 +68,8 @@
     
     UICollectionViewFlowLayout *layout= [[UICollectionViewFlowLayout alloc]init];
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-    _collectionView.backgroundColor = [UIColor whiteColor];
+    _collectionView.backgroundColor = viewBGColor;
+    _collectionView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_collectionView];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
@@ -72,7 +78,9 @@
     
     [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(64+5);
-        make.left.bottom.right.equalTo(self.view);
+        make.bottom.equalTo(self.view);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
     }];
     _dataArr = [NSMutableArray array];
     [self requestData];
@@ -89,9 +97,9 @@
 }
 
 -(void)requestData{
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    int count = 30+(int)_dataArr.count;
-    NSString *url = [NSString stringWithFormat:@"http://images.so.com/j?src=filter_noresult&q=%@&t=d&sn=%d&pn=30&zoom=3",_field.text,count];
+    [self showHudView];
+    int count = kCount+((int)_dataArr.count?:-kCount);
+    NSString *url = [NSString stringWithFormat:@"http://images.so.com/j?src=filter_noresult&q=%@&t=d&sn=%d&pn=%d&zoom=3",_field.text,count,kCount];
     url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -107,8 +115,7 @@
         }
         [_collectionView reloadData];
         [_collectionView.mj_footer endRefreshing];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-
+        [self hideHudView];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [MBProgressHUD showString:error.localizedDescription inView:self.view];
     }];
@@ -146,7 +153,8 @@
     EllenCollectionCell *cell = (EllenCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"EllenCollectionCell" forIndexPath:indexPath];
     NSDictionary *dic = _dataArr[indexPath.item];
     NSString *url = dic[@"_thumb"];
-    [cell.animatedView yy_setImageWithURL:[NSURL URLWithString:url] options:YYWebImageOptionProgressive|YYWebImageOptionIgnoreAnimatedImage];
+
+    [cell.imageView yy_setImageWithURL:[NSURL URLWithString:url] options:YYWebImageOptionProgressive|YYWebImageOptionAllowBackgroundTask|YYWebImageOptionShowNetworkActivity];
     
     return cell;
 }
@@ -161,16 +169,6 @@
     gifVC.currentPage = indexPath.item;
     [self.navigationController pushViewController:gifVC animated:YES];
     
-    
-    //    NSString *url = dic[@"thumb"];
-    //
-    //    NSData *emoticonData = [[SDImageCache sharedImageCache]imageDataFromDiskForKey:url];
-    //
-    //   EllenCollectionCell *cell = (EllenCollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
-    //    UIImage *thumbImage = cell.animatedView.image;
-    //    [WXApiRequestHandler sendEmotionData:emoticonData
-    //                              ThumbImage:thumbImage
-    //                                 InScene:WXSceneSession];
     
 }
 

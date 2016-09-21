@@ -37,6 +37,7 @@
         [self.view addSubview:_tableView];
     }
     _naviBar = [self setUpNaviViewWithType:GGNavigationBarTypeNormal];
+    self.title = @"EllenGIF";
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 

@@ -22,7 +22,7 @@
         [self addSubview:_backgroundView];
         
         _titleLab = [[UILabel alloc]initWithFrame:CGRectMake(0, navOrgY, 100, naviHeight)];
-        _titleLab.font = [UIFont systemFontOfSize:17];
+        _titleLab.font = [UIFont systemFontOfSize:18];
         _titleLab.textColor = [UIColor whiteColor];
         _titleLab.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_titleLab];

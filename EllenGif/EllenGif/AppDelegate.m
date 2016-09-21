@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "WXApiManager.h"
+#import "LaunchView.h"
+#import <UMMobClick/MobClick.h>
 
 @interface AppDelegate ()
 
@@ -18,8 +20,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [WXApi registerApp:@"wxb91a01c1075596b6" withDescription:@"EllenGif"];
+    [WXApi registerApp:WXApi_ID withDescription:@"EllenGif"];
+    UMAnalyticsConfig *config = [UMAnalyticsConfig sharedInstance];
+    config.appKey = MobClick_ID;
+    [MobClick startWithConfigure:config];
 
+    [self.window makeKeyAndVisible];
+    
+    [[LaunchView defultVIew]showInView:KeyWindow];
+    
     return YES;
 }
 

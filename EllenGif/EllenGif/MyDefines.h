@@ -11,12 +11,10 @@
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 #define SCREEN_BOUNDS [[UIScreen mainScreen] bounds]
 
-#define WXApi_ID @"wx1bc2f1985a2547b5"
-#define MobClick_ID @"539093f556240b01ab039989"
+#define WXApi_ID @"wxb91a01c1075596b6"
+#define MobClick_ID @"57e27b4167e58e504300012c"
 
-#define kZqlist @"zqlist"
-#define kZqlive @"zqlive"
-#define kVideojs @"videojs"
+
 
 
 
@@ -136,5 +134,11 @@ object_setIvar(*condition, ivar, (id)CFRunLoopGetCurrent() );\
 
 
 #define isNSNull(value) [value isKindOfClass:[NSNull class]]
+
+
+
+#define UrlForJPG(url) [url stringByReplacingOccurrencesOfString:@".gif" withString:@".jpg"]
+
+
 
 

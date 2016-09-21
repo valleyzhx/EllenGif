@@ -28,9 +28,9 @@
 }
 
 -(void)initUI{
-    _animatedView = [[YYAnimatedImageView alloc] init];
-    [self.contentView addSubview:_animatedView];
-    [_animatedView mas_makeConstraints:^(MASConstraintMaker *make) {
+    _imageView = [[UIImageView alloc] init];
+    [self.contentView addSubview:_imageView];
+    [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.contentView);
     }];
 }
