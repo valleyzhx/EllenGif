@@ -31,13 +31,18 @@
 		F04581CC1D76BCFE00C3FDB7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F04581CB1D76BCFE00C3FDB7 /* libz.tbd */; };
 		F04581CE1D76BD0600C3FDB7 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F04581CD1D76BD0600C3FDB7 /* libsqlite3.0.tbd */; };
 		F04581D01D76BD9100C3FDB7 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F04581CF1D76BD9100C3FDB7 /* libc++.1.tbd */; };
-		F09685C61D929D96001C3FFD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09685C51D929D96001C3FFD /* Images.xcassets */; };
 		F0B1A05F1D76A7160083C7F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B1A05E1D76A7160083C7F8 /* main.m */; };
 		F0B1A0621D76A7160083C7F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B1A0611D76A7160083C7F8 /* AppDelegate.m */; };
 		F0B1A0681D76A7160083C7F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B1A0661D76A7160083C7F8 /* Main.storyboard */; };
 		F0B1A06A1D76A7160083C7F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0B1A0691D76A7160083C7F8 /* Assets.xcassets */; };
 		F0B1A06D1D76A7160083C7F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B1A06B1D76A7160083C7F8 /* LaunchScreen.storyboard */; };
+		F0BF4A001D94D1F50032F5B8 /* GGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF49FF1D94D1F50032F5B8 /* GGNavigationController.m */; };
 		F0E5DA8C1D92A90B007A73F3 /* LaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E5DA8B1D92A90B007A73F3 /* LaunchView.m */; };
+		F0E5E68F1D936D3C00924C1D /* UserCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E5E68E1D936D3C00924C1D /* UserCenterController.m */; };
+		F0E5E6921D936ECC00924C1D /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E5E6911D936ECC00924C1D /* ADViewController.m */; };
+		F0E5E6941D9371D300924C1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E5E6931D9371D300924C1D /* GoogleService-Info.plist */; };
+		F0E5E6A01D93811F00924C1D /* SerchSetingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E5E69F1D93811F00924C1D /* SerchSetingView.m */; };
+		F0E5E6A31D9381F300924C1D /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E5E6A21D9381F300924C1D /* UIViewAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +92,6 @@
 		F04581CB1D76BCFE00C3FDB7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F04581CD1D76BD0600C3FDB7 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		F04581CF1D76BD9100C3FDB7 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
-		F09685C51D929D96001C3FFD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0B1A05A1D76A7160083C7F8 /* EllenGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EllenGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B1A05E1D76A7160083C7F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0B1A0601D76A7160083C7F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,8 +100,19 @@
 		F0B1A0691D76A7160083C7F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0B1A06C1D76A7160083C7F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0B1A06E1D76A7160083C7F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0BF49FE1D94D1F50032F5B8 /* GGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGNavigationController.h; sourceTree = "<group>"; };
+		F0BF49FF1D94D1F50032F5B8 /* GGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGNavigationController.m; sourceTree = "<group>"; };
 		F0E5DA8A1D92A90B007A73F3 /* LaunchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchView.h; sourceTree = "<group>"; };
 		F0E5DA8B1D92A90B007A73F3 /* LaunchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchView.m; sourceTree = "<group>"; };
+		F0E5E68D1D936D3C00924C1D /* UserCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterController.h; sourceTree = "<group>"; };
+		F0E5E68E1D936D3C00924C1D /* UserCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterController.m; sourceTree = "<group>"; };
+		F0E5E6901D936ECC00924C1D /* ADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
+		F0E5E6911D936ECC00924C1D /* ADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
+		F0E5E6931D9371D300924C1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F0E5E69E1D93811F00924C1D /* SerchSetingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerchSetingView.h; sourceTree = "<group>"; };
+		F0E5E69F1D93811F00924C1D /* SerchSetingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerchSetingView.m; sourceTree = "<group>"; };
+		F0E5E6A11D9381F300924C1D /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		F0E5E6A21D9381F300924C1D /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +160,7 @@
 		F005082E1D910B7A009B8CBC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F0E5E68C1D936BB200924C1D /* UserVC */,
 				F00508631D910ECC009B8CBC /* HomeVC */,
 				F00508321D910BD0009B8CBC /* Base */,
 			);
@@ -156,6 +172,8 @@
 			children = (
 				F03CC6911D911138004EEED7 /* MainTabBarController.h */,
 				F03CC6921D911138004EEED7 /* MainTabBarController.m */,
+				F0BF49FE1D94D1F50032F5B8 /* GGNavigationController.h */,
+				F0BF49FF1D94D1F50032F5B8 /* GGNavigationController.m */,
 				F00508351D910BD0009B8CBC /* BaseViewController.h */,
 				F00508361D910BD0009B8CBC /* BaseViewController.m */,
 				F00508371D910BD0009B8CBC /* GGNavigationBar.h */,
@@ -167,6 +185,8 @@
 		F005083C1D910EA2009B8CBC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F0E5E6A11D9381F300924C1D /* UIViewAdditions.h */,
+				F0E5E6A21D9381F300924C1D /* UIViewAdditions.m */,
 				F005083D1D910EA2009B8CBC /* MBProgressHUD+string.h */,
 				F005083E1D910EA2009B8CBC /* MBProgressHUD+string.m */,
 				F005083F1D910EA2009B8CBC /* ZXUnitil.h */,
@@ -219,6 +239,8 @@
 				F03CC6951D9118B0004EEED7 /* HomeViewController.m */,
 				F03CC6971D912972004EEED7 /* GifViewController.h */,
 				F03CC6981D912972004EEED7 /* GifViewController.m */,
+				F0E5E69E1D93811F00924C1D /* SerchSetingView.h */,
+				F0E5E69F1D93811F00924C1D /* SerchSetingView.m */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -271,7 +293,7 @@
 				F0B1A0691D76A7160083C7F8 /* Assets.xcassets */,
 				F0B1A06B1D76A7160083C7F8 /* LaunchScreen.storyboard */,
 				F0B1A06E1D76A7160083C7F8 /* Info.plist */,
-				F09685C51D929D96001C3FFD /* Images.xcassets */,
+				F0E5E6931D9371D300924C1D /* GoogleService-Info.plist */,
 				F0B1A05D1D76A7160083C7F8 /* Supporting Files */,
 			);
 			path = EllenGif;
@@ -284,6 +306,17 @@
 				F045819C1D76AA8200C3FDB7 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0E5E68C1D936BB200924C1D /* UserVC */ = {
+			isa = PBXGroup;
+			children = (
+				F0E5E6901D936ECC00924C1D /* ADViewController.h */,
+				F0E5E6911D936ECC00924C1D /* ADViewController.m */,
+				F0E5E68D1D936D3C00924C1D /* UserCenterController.h */,
+				F0E5E68E1D936D3C00924C1D /* UserCenterController.m */,
+			);
+			path = UserVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,9 +384,9 @@
 				F0B1A06D1D76A7160083C7F8 /* LaunchScreen.storyboard in Resources */,
 				F0B1A06A1D76A7160083C7F8 /* Assets.xcassets in Resources */,
 				F03CC68F1D911053004EEED7 /* read_me.txt in Resources */,
-				F09685C61D929D96001C3FFD /* Images.xcassets in Resources */,
 				F0B1A0681D76A7160083C7F8 /* Main.storyboard in Resources */,
 				F03CC6901D911053004EEED7 /* README.txt in Resources */,
+				F0E5E6941D9371D300924C1D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,19 +447,24 @@
 			files = (
 				F005085F1D910EA2009B8CBC /* WXMediaMessage+messageConstruct.m in Sources */,
 				F005085B1D910EA2009B8CBC /* WXApiRequestHandler.m in Sources */,
+				F0E5E6A31D9381F300924C1D /* UIViewAdditions.m in Sources */,
 				F00508581D910EA2009B8CBC /* MBProgressHUD+string.m in Sources */,
 				F005083B1D910BD0009B8CBC /* GGNavigationBar.m in Sources */,
 				F005085D1D910EA2009B8CBC /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
 				F03CC6991D912972004EEED7 /* GifViewController.m in Sources */,
+				F0E5E6A01D93811F00924C1D /* SerchSetingView.m in Sources */,
 				F005083A1D910BD0009B8CBC /* BaseViewController.m in Sources */,
 				F03CC6931D911138004EEED7 /* MainTabBarController.m in Sources */,
 				F03CC6961D9118B0004EEED7 /* HomeViewController.m in Sources */,
+				F0E5E6921D936ECC00924C1D /* ADViewController.m in Sources */,
 				F005085A1D910EA2009B8CBC /* WXApiManager.m in Sources */,
 				F0E5DA8C1D92A90B007A73F3 /* LaunchView.m in Sources */,
 				F005085E1D910EA2009B8CBC /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
 				F045819F1D76AD1700C3FDB7 /* EllenCollectionCell.m in Sources */,
 				F005085C1D910EA2009B8CBC /* WXApiResponseHandler.m in Sources */,
+				F0BF4A001D94D1F50032F5B8 /* GGNavigationController.m in Sources */,
 				F00508591D910EA2009B8CBC /* ZXUnitil.mm in Sources */,
+				F0E5E68F1D936D3C00924C1D /* UserCenterController.m in Sources */,
 				F0B1A0621D76A7160083C7F8 /* AppDelegate.m in Sources */,
 				F0B1A05F1D76A7160083C7F8 /* main.m in Sources */,
 			);

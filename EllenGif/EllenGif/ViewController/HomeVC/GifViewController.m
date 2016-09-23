@@ -12,6 +12,7 @@
 
 @interface GifViewController (){
     YYAnimatedImageView *_imageView;
+    GADBannerView *_adView;
 }
 @end
 
@@ -25,7 +26,7 @@
     float wid = 200*timesOf320;
     _imageView = [[YYAnimatedImageView alloc]initWithFrame:CGRectMake(0, 0, wid, wid)];
     
-    _imageView.center = CGPointMake(self.view.center.x, self.view.center.y-30);
+    _imageView.center = CGPointMake(self.view.center.x, self.view.center.y-70);
     [self.view addSubview:_imageView];
     
     UIButton *shareBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 46, 46)];
@@ -41,6 +42,7 @@
     }];
     
     [self setShowPage:_currentPage];
+    [self loadAdView];
 }
 
 -(void)setShowPage:(NSInteger)page{
@@ -60,11 +62,29 @@
 }
 
 
+
+-(void)loadAdView{
+    _adView = [[GADBannerView alloc]
+               initWithFrame:CGRectMake((SCREEN_WIDTH-320)/2,_imageView.bottom+100,320,100)];
+    _adView.adUnitID = @"ca-app-pub-7534063156170955/9242353223";
+    
+    _adView.rootViewController = self;
+    
+    [self.view addSubview:_adView];
+    GADRequest *req = [GADRequest request];
+#if DEBUG
+    req.testDevices = @[@"5610fbd8aa463fcd021f9f235d9f6ba1"];
+#endif
+    [_adView loadRequest:req];
+}
+
+
+
 #pragma mark- action
 
 -(void)clickTheShareButton:(UIButton*)btn{
     NSDictionary *dic = _dataArr[_currentPage];
-    NSString *url = dic[@"thumb"];
+    NSString *url = dic[@"_thumb"];
     YYImageCache *cache = [YYImageCache sharedCache];
     YYImage *thumbImage = (YYImage*)[cache getImageForKey:url];
     

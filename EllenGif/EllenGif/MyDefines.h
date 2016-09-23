@@ -14,7 +14,7 @@
 #define WXApi_ID @"wxb91a01c1075596b6"
 #define MobClick_ID @"57e27b4167e58e504300012c"
 
-
+#define kInitKeyword @"SearchWordDefult"
 
 
 

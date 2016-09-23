@@ -10,6 +10,7 @@
 #import "EllenCollectionCell.h"
 
 #import "GifViewController.h"
+#import "SerchSetingView.h"
 
 #define kCount 18
 
@@ -17,6 +18,7 @@
     UITextField *_field;
     UICollectionView *_collectionView;
     NSMutableArray *_dataArr;
+    SerchSetingView *_setView;
     
     UITapGestureRecognizer *_tapGesture;
     
@@ -39,7 +41,7 @@
     _field.font = [UIFont systemFontOfSize:12];
     _field.backgroundColor = [UIColor whiteColor];
     _field.textColor = TextDarkColor;
-    _field.text = @"熊本熊表情包";
+    _field.text = [[NSUserDefaults standardUserDefaults]objectForKey:kInitKeyword];
     _field.delegate = self;
     
     [_naviBar addSubview:_field];
@@ -154,7 +156,7 @@
     NSDictionary *dic = _dataArr[indexPath.item];
     NSString *url = dic[@"_thumb"];
 
-    [cell.imageView yy_setImageWithURL:[NSURL URLWithString:url] options:YYWebImageOptionProgressive|YYWebImageOptionAllowBackgroundTask|YYWebImageOptionShowNetworkActivity];
+    [cell.imageView yy_setImageWithURL:[NSURL URLWithString:url] options:YYWebImageOptionProgressive|YYWebImageOptionAllowBackgroundTask|YYWebImageOptionShowNetworkActivity|YYWebImageOptionIgnoreAnimatedImage];
     
     return cell;
 }
@@ -176,24 +178,38 @@
 
 -(void)clickTheBtn:(UIButton*)btn{
     if (!_field.text.length) {
-        _field.text = @" 熊本熊表情包";
+        [MBProgressHUD showString:@"请输入内容" inView:self.view];
+        return;
     }
     [_dataArr removeAllObjects];
     [self requestData];
-    [_field resignFirstResponder];
-    _tapGesture.enabled = NO;
+    [self resignTheTextField];
+    if (_setView.isChecked) {
+        [[NSUserDefaults standardUserDefaults]setObject:_field.text forKey:kInitKeyword];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
 }
 
 -(void)tapTheScreen:(UITapGestureRecognizer*)tap{
-    [_field resignFirstResponder];
-    _tapGesture.enabled = NO;
+    [self resignTheTextField];
 }
 
+-(void)resignTheTextField{
+    [_field resignFirstResponder];
+    _tapGesture.enabled = NO;
+    [_setView hideView];
+}
 
 #pragma mark- UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     _tapGesture.enabled = YES;
+    if (_setView == nil) {
+        _setView = [[SerchSetingView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, 40)];
+        _setView.backgroundColor = [UIColor whiteColor];
+    }
+    [_setView showInView:self.view];
+    [self.view bringSubviewToFront:_naviBar];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{

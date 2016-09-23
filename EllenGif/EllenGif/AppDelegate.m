@@ -10,6 +10,7 @@
 #import "WXApiManager.h"
 #import "LaunchView.h"
 #import <UMMobClick/MobClick.h>
+#import <FirebaseAnalytics/FIRApp.h>
 
 @interface AppDelegate ()
 
@@ -20,16 +21,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self setDefualtConfigure];
     [WXApi registerApp:WXApi_ID withDescription:@"EllenGif"];
     UMAnalyticsConfig *config = [UMAnalyticsConfig sharedInstance];
     config.appKey = MobClick_ID;
     [MobClick startWithConfigure:config];
+    [FIRApp configure];
+   
 
     [self.window makeKeyAndVisible];
     
     [[LaunchView defultVIew]showInView:KeyWindow];
     
     return YES;
+}
+
+-(void)setDefualtConfigure{
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:kInitKeyword] == nil) {
+        [[NSUserDefaults standardUserDefaults]setObject:@"熊本熊表情包" forKey:kInitKeyword];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {

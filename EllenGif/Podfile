@@ -9,5 +9,6 @@ target :EllenGif do
     pod 'YYWebImage'
     pod 'UMengFeedback'
     pod 'UMengAnalytics'
+    pod 'Firebase/AdMob'
 
 end

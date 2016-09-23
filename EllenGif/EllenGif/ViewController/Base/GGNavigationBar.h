@@ -10,6 +10,7 @@
 typedef NS_ENUM(NSInteger, GGNavigationBarType){
     GGNavigationBarTypeNormal = 0,
     GGNavigationBarTypeCustom = 1,
+    GGNavigationBarTypeNone = 2,
 };
 @interface GGNavigationBar : UIView
 

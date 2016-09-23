@@ -26,6 +26,8 @@
 
 @property (nonatomic,assign) BOOL showGDTADView;
 
+@property (nonatomic,assign) GGNavigationBarType naviType;
+
 
 -(void)showHudView;
 -(void)hideHudView;

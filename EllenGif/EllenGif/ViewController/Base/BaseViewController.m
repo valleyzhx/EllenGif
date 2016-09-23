@@ -36,12 +36,20 @@
         
         [self.view addSubview:_tableView];
     }
-    _naviBar = [self setUpNaviViewWithType:GGNavigationBarTypeNormal];
-    self.title = @"EllenGIF";
+    _naviBar = [self setUpNaviViewWithType:_naviType];
+    _naviBar.title = @"EllenGIF";
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 -(GGNavigationBar *)setUpNaviViewWithType:(GGNavigationBarType)type{
+    
+    if (type == GGNavigationBarTypeNone) {
+        [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+        return nil;
+    }
+    
     if (_naviBar) {
         [_naviBar removeFromSuperview];
         _naviBar = nil;

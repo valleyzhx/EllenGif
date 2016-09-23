@@ -572,6 +572,10 @@ static void URLInBlackListAdd(NSURL *url) {
                 if (![self isCancelled]) {
                     _completion(frame.image, _request.URL, YYWebImageFromRemote, YYWebImageStageProgress, nil);
                     _lastProgressiveDecodeTimestamp = now;
+                    ///我加的
+//                    if (_progressiveDecoder.type == YYImageTypeGIF && (self.options&YYWebImageOptionIgnoreAnimatedImage)) {
+//                        [self cancel];
+//                    }
                 }
                 [_lock unlock];
             }

@@ -20,7 +20,9 @@
 #import "UIKit+AFNetworking.h"
 #import "MBProgressHUD.h"
 #import "YYWebImage.h"
+#import "UIViewAdditions.h"
 
 #import "ZXUnitil.h"
+#import <GoogleMobileAds/GoogleMobileAds.h>
 
 #endif /* PrefixHeader_pch */
