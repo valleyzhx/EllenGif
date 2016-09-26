@@ -40,7 +40,7 @@ static LaunchView *_launchView;
 -(void)showInView:(UIView *)view{
     [view addSubview:self];
     
-    [UIView animateWithDuration:2.0 delay:3 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:2.0 delay:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.alpha = 0;
         self.transform = CGAffineTransformMakeScale(1.3, 1.3);
     } completion:^(BOOL finished) {

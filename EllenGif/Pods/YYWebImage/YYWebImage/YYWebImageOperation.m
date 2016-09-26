@@ -573,9 +573,12 @@ static void URLInBlackListAdd(NSURL *url) {
                     _completion(frame.image, _request.URL, YYWebImageFromRemote, YYWebImageStageProgress, nil);
                     _lastProgressiveDecodeTimestamp = now;
                     ///我加的
-//                    if (_progressiveDecoder.type == YYImageTypeGIF && (self.options&YYWebImageOptionIgnoreAnimatedImage)) {
-//                        [self cancel];
-//                    }
+                    if (_progressiveDecoder.type == YYImageTypeGIF && (self.options&YYWebImageOptionIgnoreAnimatedImage)) {
+                        if (_progressiveDecoder.frameCount>1) {
+                            [self performSelector:@selector(_didReceiveImageFromWeb:) onThread:[self.class _networkThread] withObject:frame.image waitUntilDone:NO];
+                            [self cancel];
+                        }
+                    }
                 }
                 [_lock unlock];
             }

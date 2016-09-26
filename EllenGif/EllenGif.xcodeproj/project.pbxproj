@@ -354,7 +354,7 @@
 					F0B1A0591D76A7160083C7F8 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = BZ2BR27C6A;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -580,7 +580,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = BZ2BR27C6A;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EllenGif/PrefixHeader.pch";
@@ -594,6 +594,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xianng.com.EllenGif;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9deecc2c-4827-4073-a0a8-4846a674b0cf";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: *";
 			};
 			name = Debug;
 		};
@@ -603,7 +605,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = BZ2BR27C6A;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EllenGif/PrefixHeader.pch";
@@ -617,7 +619,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xianng.com.EllenGif;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "956d4c9f-1f11-44d2-89dd-5e76a1066561";
+				PROVISIONING_PROFILE_SPECIFIER = EllenGifDistributon;
 			};
 			name = Release;
 		};

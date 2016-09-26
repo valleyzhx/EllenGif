@@ -123,7 +123,10 @@
     return nil;
 }
 
-
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 
 -(void)dealloc{
     _tableView = nil;

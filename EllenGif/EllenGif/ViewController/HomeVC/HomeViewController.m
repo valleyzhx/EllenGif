@@ -23,6 +23,8 @@
     UITapGestureRecognizer *_tapGesture;
     
     NSIndexPath *_selectedIndex;
+    
+    NSInteger _total;
 }
 
 @end
@@ -106,6 +108,7 @@
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36" forHTTPHeaderField:@"User-Agent"];
     
     [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
@@ -114,6 +117,10 @@
         NSArray *list = responseObject[@"list"];
         if (list) {
             [_dataArr addObjectsFromArray:list];
+        }
+        _total = [responseObject[@"total"]integerValue];
+        if (_dataArr.count == _total) {
+            [_collectionView.mj_footer endRefreshingWithNoMoreData];
         }
         [_collectionView reloadData];
         [_collectionView.mj_footer endRefreshing];
@@ -127,10 +134,10 @@
 
 -(CGFloat )collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 10;
+    return 9;
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-    return 10;
+    return 9;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -145,7 +152,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    float wid = (SCREEN_WIDTH-40)/3;
+    int wid = (SCREEN_WIDTH-40)/3;
     return CGSizeMake(wid, wid);
 }
 
@@ -155,8 +162,8 @@
     EllenCollectionCell *cell = (EllenCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"EllenCollectionCell" forIndexPath:indexPath];
     NSDictionary *dic = _dataArr[indexPath.item];
     NSString *url = dic[@"_thumb"];
-
-    [cell.imageView yy_setImageWithURL:[NSURL URLWithString:url] options:YYWebImageOptionProgressive|YYWebImageOptionAllowBackgroundTask|YYWebImageOptionShowNetworkActivity|YYWebImageOptionIgnoreAnimatedImage];
+    
+    [cell.imageView yy_setImageWithURL:[NSURL URLWithString:UrlForJPG(url)] options:YYWebImageOptionProgressive|YYWebImageOptionAllowBackgroundTask|YYWebImageOptionIgnoreAnimatedImage];
     
     return cell;
 }

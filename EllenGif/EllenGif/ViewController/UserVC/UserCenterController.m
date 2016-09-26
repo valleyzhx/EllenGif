@@ -38,6 +38,17 @@
         view.backgroundColor = [UIColor clearColor];
         view;
     });
+    
+    self.tableView.tableFooterView = ({
+        UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 60)];
+        lab.textColor = TextDarkColor;
+        lab.backgroundColor = viewBGColor;
+        lab.font = [UIFont systemFontOfSize:14];
+        lab.text = [NSString stringWithFormat:@"EllenGif   V.%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+        lab.textAlignment = NSTextAlignmentCenter;
+        lab;
+    });
+    
     _titleArr = @[@[@"给个好评",@"分享APP"],@[@"每日一句"],@[@"清除缓存"]];
 }
 
@@ -140,7 +151,7 @@
         [self presentViewController:[UMFeedback feedbackModalViewController] animated:YES completion:nil];
     }
     if ([title isEqualToString:@"给个好评"]) {
-        NSString *url = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=998419702";
+        NSString *url = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1158784553";
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
     }
     
@@ -148,8 +159,8 @@
         [WXApiRequestHandler sendAppContentData:nil
                                         ExtInfo:@""
                                          ExtURL:appStoreUrl
-                                          Title:@"刀一把"
-                                    Description:@"最新最热Dota视频App"
+                                          Title:@"EllenGif"
+                                    Description:@"分享你的gif给你的微信好友"
                                      MessageExt:nil
                                   MessageAction:nil
                                      ThumbImage:nil
