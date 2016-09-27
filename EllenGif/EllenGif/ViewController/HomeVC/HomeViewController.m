@@ -101,6 +101,7 @@
 }
 
 -(void)requestData{
+    
     [self showHudView];
     int count = kCount+((int)_dataArr.count?:-kCount);
     NSString *url = [NSString stringWithFormat:@"http://images.so.com/j?src=filter_noresult&q=%@&t=d&sn=%d&pn=%d&zoom=3",_field.text,count,kCount];
@@ -189,6 +190,7 @@
         return;
     }
     [_dataArr removeAllObjects];
+    [[YYWebImageManager sharedManager].queue cancelAllOperations];
     [self requestData];
     [self resignTheTextField];
     if (_setView.isChecked) {
