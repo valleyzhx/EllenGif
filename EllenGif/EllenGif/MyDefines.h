@@ -13,6 +13,9 @@
 
 #define WXApi_ID @"wxb91a01c1075596b6"
 #define MobClick_ID @"57e27b4167e58e504300012c"
+//App Store Url
+#define kAppStoreUrl @"https://itunes.apple.com/cn/app/id1158784553?l=zh&ls=1&mt=8"
+#define kAppStoreComendUrl @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1158784553"
 
 #define kInitKeyword @"SearchWordDefult"
 
@@ -61,10 +64,6 @@
     #define preUrl @"http://gw.car.jd.com/client"
 #endif
 
-//检查更新
-#define updateURL @"http://itunes.apple.com/lookup?id=993559495"
-//App Store Url
-#define appStoreUrl @"https://itunes.apple.com/cn/app/id958792762?mt=8"
 //当前操作是否在主线程，如果不是，则转到主线程
 #define GetMainQueue(condition)  \
 if (![[NSThread currentThread] isMainThread]) {    \

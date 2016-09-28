@@ -151,14 +151,13 @@
         [self presentViewController:[UMFeedback feedbackModalViewController] animated:YES completion:nil];
     }
     if ([title isEqualToString:@"给个好评"]) {
-        NSString *url = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1158784553";
-        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:kAppStoreComendUrl]];
     }
     
     if ([title isEqualToString:@"分享APP"]) {
         [WXApiRequestHandler sendAppContentData:nil
                                         ExtInfo:@""
-                                         ExtURL:appStoreUrl
+                                         ExtURL:kAppStoreUrl
                                           Title:@"EllenGif"
                                     Description:@"分享你的gif给你的微信好友"
                                      MessageExt:nil
