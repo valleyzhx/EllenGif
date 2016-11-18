@@ -11,10 +11,14 @@
 #import "WXApiRequestHandler.h"
 #import "UMFeedback.h"
 #import "ADViewController.h"
+#import "UzysAssetsPickerController.h"
+#import "WXApiRequestHandler.h"
+#import "GifViewController.h"
+
 
 #define imageHeight 230
 
-@interface UserCenterController ()<UITableViewDataSource,UITableViewDelegate>
+@interface UserCenterController ()<UITableViewDataSource,UITableViewDelegate,UzysAssetsPickerControllerDelegate>
 @property (strong, nonatomic) UIImageView *imagView;
 
 @end
@@ -49,7 +53,7 @@
         lab;
     });
     
-    _titleArr = @[@[@"给个好评",@"分享APP"],@[@"每日一句"],@[@"清除缓存"]];
+    _titleArr = @[@[@"给个好评",@"分享APP"],@[@"每日一句"],@[@"发送相册照片"],@[@"清除缓存"]];
 }
 
 -(void)setHeaderImage{
@@ -169,6 +173,9 @@
         ADViewController *controller = [[ADViewController alloc]init];
         [self.navigationController pushViewController:controller animated:YES];
     }
+    if ([title isEqualToString:@"发送相册照片"]) {
+        [self choosePictures];
+    }
     if ([title isEqualToString:@"清除缓存"]) {
         [self showHudView];
         [[YYImageCache sharedCache].diskCache removeAllObjectsWithProgressBlock:^(int removedCount, int totalCount) {
@@ -182,6 +189,56 @@
 
 
 
+- (void)choosePictures {
+    UzysAssetsPickerController *picker = [[UzysAssetsPickerController alloc] init];
+    picker.delegate = self;
+    picker.maximumNumberOfSelectionPhoto = 1;
+    picker.maximumNumberOfSelectionVideo = 0;
+    
+    [self presentViewController:picker animated:YES completion:^{
+        
+    }];
+    
+}
+
+
+
+#pragma mark --- UzysAssetsPickerControllerDelegate
+
+- (void)uzysAssetsPickerController:(UzysAssetsPickerController *)picker didFinishPickingAssets:(NSArray *)assets{
+    if([[assets[0] valueForProperty:@"ALAssetPropertyType"] isEqualToString:@"ALAssetTypePhoto"]) //Photo
+    {
+        
+        [assets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            ALAsset *representation = obj;
+            NSData *data;
+            ALAssetRepresentation *re = [representation representationForUTI: (__bridge NSString *)kUTTypeGIF];
+            if (re) {
+                long long size = re.size;
+                uint8_t *buffer = malloc(size);
+                NSError *error;
+                NSUInteger bytes = [re getBytes:buffer fromOffset:0 length:size error:&error];
+                data = [NSData dataWithBytes:buffer length:bytes];
+                free(buffer);
+                
+                
+                
+            }else{
+                UIImage *img = [UIImage imageWithCGImage:representation.defaultRepresentation.fullResolutionImage scale:representation.defaultRepresentation.scale
+                                             orientation:(UIImageOrientation)representation.defaultRepresentation.orientation];
+                data = UIImageJPEGRepresentation(img, 0.8);
+            }
+            if (data) {
+                GifViewController *gifViewVC = [[GifViewController alloc]init];
+                gifViewVC.gifData = data;
+                [self.navigationController pushViewController:gifViewVC animated:YES];
+            }
+            
+        }];
+        
+        
+    }
+}
 
 
 

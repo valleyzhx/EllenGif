@@ -13,6 +13,6 @@
 @property (nonatomic,strong) NSMutableArray *dataArr;
 @property (nonatomic,assign) NSInteger currentPage;
 
-
+@property (nonatomic,strong) NSData *gifData;
 
 @end

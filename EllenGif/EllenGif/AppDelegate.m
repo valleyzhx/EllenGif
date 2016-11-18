@@ -27,7 +27,7 @@
     UMAnalyticsConfig *config = [UMAnalyticsConfig sharedInstance];
     config.appKey = MobClick_ID;
     [MobClick startWithConfigure:config];
-    [FIRApp configure];
+//    [FIRApp configure];
    
 
     [self.window makeKeyAndVisible];

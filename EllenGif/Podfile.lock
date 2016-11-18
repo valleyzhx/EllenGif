@@ -36,6 +36,7 @@ PODS:
   - MJRefresh (3.1.12)
   - UMengAnalytics (4.1.0)
   - UMengFeedback (2.3.4)
+  - UzysAssetsPickerController (0.9.9)
   - YYCache (1.0.3)
   - YYImage (1.0.3):
     - YYImage/Core (= 1.0.3)
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - MJRefresh
   - UMengAnalytics
   - UMengFeedback
+  - UzysAssetsPickerController
   - YYWebImage
 
 SPEC CHECKSUMS:
@@ -68,10 +70,11 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   UMengAnalytics: 19b28253793d77dff10fb7d502faad1fb6b8ce4a
   UMengFeedback: 5283cc0e324dffca4dd54c4abb3cbded56487817
+  UzysAssetsPickerController: 47c27bd96955467925f3d4d80b1e2e8aaeff766d
   YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
   YYImage: 362f44ffba1fc498f2152060f3bb54ed84600981
   YYWebImage: 0431ed108e104527669b86f75efd58958425cca2
 
-PODFILE CHECKSUM: eeca116061b10238741c86e1eb187b2841a875df
+PODFILE CHECKSUM: c3392ddf0f63320194b95407c7b78e8a179f144d
 
 COCOAPODS: 1.0.0

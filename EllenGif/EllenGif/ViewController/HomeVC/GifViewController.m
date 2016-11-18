@@ -41,7 +41,13 @@
         
     }];
     
-    [self setShowPage:_currentPage];
+    
+    if (_dataArr) {
+        [self setShowPage:_currentPage];
+    }else{
+        [self loadImageViewWithGifData];
+    }
+    
     [self loadAdView];
 }
 
@@ -51,21 +57,38 @@
     if (page < _dataArr.count) {
         NSDictionary *dic = _dataArr[page];
         NSString *url = dic[@"_thumb"];
+        __weak YYAnimatedImageView *imgView = _imageView;
         [_imageView yy_setImageWithURL:[NSURL URLWithString:url] placeholder:nil options:YYWebImageOptionProgressive|YYWebImageOptionAllowBackgroundTask|YYWebImageOptionShowNetworkActivity completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
             if (stage != YYWebImageStageProgress || error
                 ) {
                 [self hideHudView];
+                if (image) {
+                    float ratio = image.size.height/image.size.width;
+                    imgView.height = imgView.width*ratio;
+                }
             }
+            
         }];
         
     }
 }
 
+-(void)loadImageViewWithGifData{
+    if (!_gifData) {
+        return;
+    }
+    YYImage *image =  [YYImage imageWithData:_gifData];
+    
+    float ratio = image.size.height/image.size.width;
+    _imageView.height = _imageView.width*ratio;
+    
+    _imageView.image = image;
+}
 
 
 -(void)loadAdView{
     _adView = [[GADBannerView alloc]
-               initWithFrame:CGRectMake((SCREEN_WIDTH-320)/2,_imageView.bottom+100,320,100)];
+               initWithFrame:CGRectMake((SCREEN_WIDTH-320)/2,self.view.height-120,320,100)];
     _adView.adUnitID = @"ca-app-pub-7534063156170955/9242353223";
     
     _adView.rootViewController = self;
@@ -83,12 +106,24 @@
 #pragma mark- action
 
 -(void)clickTheShareButton:(UIButton*)btn{
-    NSDictionary *dic = _dataArr[_currentPage];
-    NSString *url = dic[@"_thumb"];
-    YYImageCache *cache = [YYImageCache sharedCache];
-    YYImage *thumbImage = (YYImage*)[cache getImageForKey:url];
     
-    [WXApiRequestHandler sendEmotionData:thumbImage.animatedImageData
+    
+    YYImage *thumbImage;
+    if (_gifData) {
+        thumbImage = (YYImage*)_imageView.image;
+    }else{
+        NSDictionary *dic = _dataArr[_currentPage];
+        NSString *url = dic[@"_thumb"];
+        YYImageCache *cache = [YYImageCache sharedCache];
+        thumbImage = (YYImage*)[cache getImageForKey:url];
+    }
+    
+    if (thumbImage == nil) {
+        return;
+    }
+    
+    NSData *data = thumbImage.animatedImageData?:_gifData;
+    [WXApiRequestHandler sendEmotionData:data
                               ThumbImage:thumbImage
                                  InScene:WXSceneSession];
 }

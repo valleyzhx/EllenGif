@@ -10,5 +10,6 @@ target :EllenGif do
     pod 'UMengFeedback'
     pod 'UMengAnalytics'
     pod 'Firebase/AdMob'
+    pod 'UzysAssetsPickerController'
 
 end
