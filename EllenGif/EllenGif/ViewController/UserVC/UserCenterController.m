@@ -53,7 +53,7 @@
         lab;
     });
     
-    _titleArr = @[@[@"给个好评",@"分享APP"],@[@"每日一句"],@[@"发送相册照片"],@[@"清除缓存"]];
+    _titleArr = @[@[@"给个好评",@"分享APP"],@[@"每日一句"],@[@"打开相册照片"],@[@"清除缓存"]];
 }
 
 -(void)setHeaderImage{
@@ -173,7 +173,7 @@
         ADViewController *controller = [[ADViewController alloc]init];
         [self.navigationController pushViewController:controller animated:YES];
     }
-    if ([title isEqualToString:@"发送相册照片"]) {
+    if ([title isEqualToString:@"打开相册照片"]) {
         [self choosePictures];
     }
     if ([title isEqualToString:@"清除缓存"]) {

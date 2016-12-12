@@ -94,6 +94,10 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
+-(void)showMessage:(NSString *)message{
+    [MBProgressHUD showString:message inView:self.view];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

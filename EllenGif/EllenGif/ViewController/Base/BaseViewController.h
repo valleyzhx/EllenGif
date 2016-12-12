@@ -32,4 +32,6 @@
 -(void)showHudView;
 -(void)hideHudView;
 
+-(void)showMessage:(NSString*)message;
+
 @end

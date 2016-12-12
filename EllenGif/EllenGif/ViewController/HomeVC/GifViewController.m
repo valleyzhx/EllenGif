@@ -9,6 +9,7 @@
 #import "GifViewController.h"
 #import "WXApiRequestHandler.h"
 #import "WXApiManager.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface GifViewController (){
     YYAnimatedImageView *_imageView;
@@ -44,6 +45,21 @@
     
     if (_dataArr) {
         [self setShowPage:_currentPage];
+        
+        UIButton *saveBtn = [[UIButton alloc]init];
+        [saveBtn setImage:[UIImage imageNamed:@"downloadIcon"] forState:UIControlStateNormal];
+        [saveBtn addTarget:self action:@selector(clickTheSaveButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:saveBtn];
+        [saveBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(42);
+            make.centerY.equalTo(shareBtn);
+            make.left.equalTo(shareBtn.mas_right).offset(30);
+        }];
+        [shareBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(_imageView).offset(-55);
+        }];
+        
+        
     }else{
         [self loadImageViewWithGifData];
     }
@@ -126,6 +142,26 @@
     [WXApiRequestHandler sendEmotionData:data
                               ThumbImage:thumbImage
                                  InScene:WXSceneSession];
+}
+
+-(void)clickTheSaveButton:(UIButton*)btn{
+    [self showHudView];
+    NSDictionary *dic = _dataArr[_currentPage];
+    NSString *url = dic[@"_thumb"];
+    YYImageCache *cache = [YYImageCache sharedCache];
+    YYImage *thumbImage = (YYImage*)[cache getImageForKey:url];
+    NSData *data = thumbImage.animatedImageData;
+
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    
+    [library writeImageDataToSavedPhotosAlbum:data metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
+        [self hideHudView];
+        if (error) {
+            [self showMessage:error.localizedDescription];
+        }else{
+            [self showMessage:@"保存成功"];
+        }
+    }];
 }
 
 
