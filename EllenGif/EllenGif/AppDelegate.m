@@ -11,6 +11,7 @@
 #import "LaunchView.h"
 #import <UMMobClick/MobClick.h>
 #import <FirebaseAnalytics/FIRApp.h>
+#import <JSPatchPlatform/JSPatch.h>
 
 @interface AppDelegate ()
 
@@ -28,10 +29,12 @@
     config.appKey = MobClick_ID;
     [MobClick startWithConfigure:config];
 //    [FIRApp configure];
+    
+    [JSPatch startWithAppKey:@"7d5bb87d8626b8f3"];
+    [JSPatch sync];
    
 
     [self.window makeKeyAndVisible];
-    
     [[LaunchView defultVIew]showInView:KeyWindow];
     
     return YES;

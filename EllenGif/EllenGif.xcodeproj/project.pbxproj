@@ -37,6 +37,7 @@
 		F0B1A06A1D76A7160083C7F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0B1A0691D76A7160083C7F8 /* Assets.xcassets */; };
 		F0B1A06D1D76A7160083C7F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B1A06B1D76A7160083C7F8 /* LaunchScreen.storyboard */; };
 		F0BF4A001D94D1F50032F5B8 /* GGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF49FF1D94D1F50032F5B8 /* GGNavigationController.m */; };
+		F0D420601E039DE500E596F0 /* FavorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D4205F1E039DE500E596F0 /* FavorViewController.m */; };
 		F0E5DA8C1D92A90B007A73F3 /* LaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E5DA8B1D92A90B007A73F3 /* LaunchView.m */; };
 		F0E5E68F1D936D3C00924C1D /* UserCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E5E68E1D936D3C00924C1D /* UserCenterController.m */; };
 		F0E5E6921D936ECC00924C1D /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E5E6911D936ECC00924C1D /* ADViewController.m */; };
@@ -102,6 +103,8 @@
 		F0B1A06E1D76A7160083C7F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0BF49FE1D94D1F50032F5B8 /* GGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGNavigationController.h; sourceTree = "<group>"; };
 		F0BF49FF1D94D1F50032F5B8 /* GGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGNavigationController.m; sourceTree = "<group>"; };
+		F0D4205E1E039DE500E596F0 /* FavorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavorViewController.h; sourceTree = "<group>"; };
+		F0D4205F1E039DE500E596F0 /* FavorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavorViewController.m; sourceTree = "<group>"; };
 		F0E5DA8A1D92A90B007A73F3 /* LaunchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchView.h; sourceTree = "<group>"; };
 		F0E5DA8B1D92A90B007A73F3 /* LaunchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchView.m; sourceTree = "<group>"; };
 		F0E5E68D1D936D3C00924C1D /* UserCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterController.h; sourceTree = "<group>"; };
@@ -315,6 +318,8 @@
 				F0E5E6911D936ECC00924C1D /* ADViewController.m */,
 				F0E5E68D1D936D3C00924C1D /* UserCenterController.h */,
 				F0E5E68E1D936D3C00924C1D /* UserCenterController.m */,
+				F0D4205E1E039DE500E596F0 /* FavorViewController.h */,
+				F0D4205F1E039DE500E596F0 /* FavorViewController.m */,
 			);
 			path = UserVC;
 			sourceTree = "<group>";
@@ -326,12 +331,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0B1A0711D76A7160083C7F8 /* Build configuration list for PBXNativeTarget "EllenGif" */;
 			buildPhases = (
-				ADD520CD2C61441D6BC35009 /* 📦 Check Pods Manifest.lock */,
+				ADD520CD2C61441D6BC35009 /* [CP] Check Pods Manifest.lock */,
 				F0B1A0561D76A7160083C7F8 /* Sources */,
 				F0B1A0571D76A7160083C7F8 /* Frameworks */,
 				F0B1A0581D76A7160083C7F8 /* Resources */,
-				0FB021F07A6B1212879F6132 /* 📦 Embed Pods Frameworks */,
-				50CD635B30F22F22F99BD608 /* 📦 Copy Pods Resources */,
+				0FB021F07A6B1212879F6132 /* [CP] Embed Pods Frameworks */,
+				50CD635B30F22F22F99BD608 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -393,14 +398,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0FB021F07A6B1212879F6132 /* 📦 Embed Pods Frameworks */ = {
+		0FB021F07A6B1212879F6132 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,14 +413,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EllenGif/Pods-EllenGif-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		50CD635B30F22F22F99BD608 /* 📦 Copy Pods Resources */ = {
+		50CD635B30F22F22F99BD608 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,19 +428,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EllenGif/Pods-EllenGif-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ADD520CD2C61441D6BC35009 /* 📦 Check Pods Manifest.lock */ = {
+		ADD520CD2C61441D6BC35009 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -465,6 +470,7 @@
 				F0BF4A001D94D1F50032F5B8 /* GGNavigationController.m in Sources */,
 				F00508591D910EA2009B8CBC /* ZXUnitil.mm in Sources */,
 				F0E5E68F1D936D3C00924C1D /* UserCenterController.m in Sources */,
+				F0D420601E039DE500E596F0 /* FavorViewController.m in Sources */,
 				F0B1A0621D76A7160083C7F8 /* AppDelegate.m in Sources */,
 				F0B1A05F1D76A7160083C7F8 /* main.m in Sources */,
 			);

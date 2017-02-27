@@ -36,7 +36,7 @@
         
         [self.view addSubview:_tableView];
     }
-    _naviBar = [self setUpNaviViewWithType:_naviType];
+    _naviBar = [self setUpNaviViewWithType:GGNavigationBarTypeNormal];
     _naviBar.title = @"EllenGIF";
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
@@ -71,6 +71,12 @@
         make.top.equalTo(view.mas_bottom);
     }];
     return view;
+}
+
+-(void)setNaviType:(GGNavigationBarType)naviType{
+    
+    _naviBar = [self setUpNaviViewWithType:naviType];
+    
 }
 
 -(void)clickedBackAction:(UIButton*)btn{

@@ -15,9 +15,6 @@
 #define kCount 18
 
 @interface HomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate>{
-    UITextField *_field;
-    UICollectionView *_collectionView;
-    NSMutableArray *_dataArr;
     SerchSetingView *_setView;
     
     UITapGestureRecognizer *_tapGesture;

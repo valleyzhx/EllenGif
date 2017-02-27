@@ -18,7 +18,7 @@
 #define kAppStoreComendUrl @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1158784553"
 
 #define kInitKeyword @"SearchWordDefult"
-
+#define kFavorite @"favorite"
 
 
 #define appDelegate                     ((AppDelegate *)[[UIApplication sharedApplication] delegate])

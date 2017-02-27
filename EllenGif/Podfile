@@ -11,5 +11,6 @@ target :EllenGif do
     pod 'UMengAnalytics'
     pod 'Firebase/AdMob'
     pod 'UzysAssetsPickerController'
+    pod 'JSPatchPlatform'
 
 end
