@@ -30,8 +30,8 @@
     [MobClick startWithConfigure:config];
 //    [FIRApp configure];
     
-    [JSPatch startWithAppKey:@"7d5bb87d8626b8f3"];
-    [JSPatch sync];
+//    [JSPatch startWithAppKey:@"7d5bb87d8626b8f3"];
+//    [JSPatch sync];
    
 
     [self.window makeKeyAndVisible];

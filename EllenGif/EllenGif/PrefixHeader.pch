@@ -14,7 +14,7 @@
 
 
 #import "MyDefines.h"
-#import "AFNetworking.h"
+#import "GGRequest.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
 #import "UIKit+AFNetworking.h"
@@ -24,5 +24,6 @@
 
 #import "ZXUnitil.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
+#import <Mantle.h>
 
 #endif /* PrefixHeader_pch */
