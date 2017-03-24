@@ -60,7 +60,6 @@
 -(void)loadVideoList:(int)page{
     NSString *text = _searchBar.text;
     NSString *searchUrl = [NSString stringWithFormat:@"https://openapi.youku.com/v2/searches/video/by_keyword.json?client_id=e2306ead120d2e34&keyword=%@&category=搞笑&page=%d",text,page];
-    searchUrl = [searchUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [VideoListModel getVideoListBy:searchUrl complish:^(id objc) {
         VideoListModel *model = objc;
         if (model.videos) {

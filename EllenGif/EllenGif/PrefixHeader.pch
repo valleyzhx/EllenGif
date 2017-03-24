@@ -26,4 +26,10 @@
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import <Mantle.h>
 
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {}
+#endif
+
 #endif /* PrefixHeader_pch */

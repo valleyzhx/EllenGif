@@ -49,7 +49,7 @@
 
 -(void)loadVideoList:(int)page{
     
-    NSString *url = [NSString stringWithFormat:@"https://api.youku.com/quality/video/by/category.json?client_id=e2306ead120d2e34&cate=1&count=10&page=%d",currentPage];
+    NSString *url = [NSString stringWithFormat:@"https://openapi.youku.com/v2/searches/video/by_tag.json?client_id=e2306ead120d2e34&tag=搞笑&count=10&page=%d",currentPage];
     [self showHudView];
     
     [VideoListModel getVideoListBy:url complish:^(id objc) {

@@ -13,6 +13,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _publishLab.textColor = TextLightColor;
     _titleLab.textColor = TextDarkColor;
 }

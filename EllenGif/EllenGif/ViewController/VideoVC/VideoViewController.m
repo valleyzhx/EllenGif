@@ -175,7 +175,7 @@
             
         }
         titleLab.text = _videoObject.title;
-        [ZXUnitil fitTheLabel:titleLab];
+        [ZXUnitil fitTheLabel:titleLab withMaxHeight:1000];
         detialLab.text = [NSString stringWithFormat:@"发布时间: %@",_videoObject.published];
         detialLab.center = CGPointMake(detialLab.center.x, CGRectGetMaxY(titleLab.frame)+5 + detialLab.frame.size.height/2);
     }else if (indexPath.row == 1){
@@ -210,7 +210,7 @@
         [imgView setImageWithURL:[NSURL URLWithString:_user.avatar_large]];
         nameLab.text = _user.name;
         descLab.text = _user.userDescription;
-        [ZXUnitil fitTheLabel:descLab];
+        [ZXUnitil fitTheLabel:descLab withMaxHeight:1000];
     }else if (indexPath.row == 2){
         cell =[tableView dequeueReusableCellWithIdentifier:@"thirdCell"];
         if (!cell) {

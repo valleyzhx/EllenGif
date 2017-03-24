@@ -110,11 +110,11 @@ static NSString *const GADAdUnitID = @"ca-app-pub-7534063156170955/8040704423";
     }
     NSInteger modelIndex = indexPath.row-adIndex;
     VideoModel *model = _listArr[modelIndex];
-    
+    cell.imgView.image = nil;
     [cell.imgView setImageWithURL:[NSURL URLWithString:model.thumbnail]];
     cell.titleLab.text = model.title;
     cell.publishLab.text = model.published;
-    [ZXUnitil fitTheLabel:cell.titleLab];
+    [ZXUnitil fitTheLabel:cell.titleLab withMaxHeight:17*3];
     //userLab.text = dataDic[@""];
     float y = cell.publishLab.frame.origin.y - CGRectGetMaxY(cell.imgView.frame);
     userLab.center = CGPointMake(userLab.center.x, CGRectGetMaxY(cell.imgView.frame)+y/2);

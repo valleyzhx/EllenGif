@@ -118,7 +118,7 @@
     [cell.imgView setImageWithURL:[NSURL URLWithString:model.thumbnail]];
     cell.titleLab.text = model.title;
     cell.publishLab.text = model.published;
-    [ZXUnitil fitTheLabel:cell.titleLab];
+    [ZXUnitil fitTheLabel:cell.titleLab withMaxHeight:17*3];
     return cell;
 }
 
