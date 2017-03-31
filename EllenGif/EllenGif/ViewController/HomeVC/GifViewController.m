@@ -14,12 +14,13 @@
 @interface GifViewController (){
     YYAnimatedImageView *_imageView;
     GADBannerView *_adView;
+    NSString *_url;
+    BOOL _isFavor;
 }
 @end
 
 
 @implementation GifViewController
-@synthesize currentPage = _currentPage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,13 +51,36 @@
         [saveBtn setImage:[UIImage imageNamed:@"downloadIcon"] forState:UIControlStateNormal];
         [saveBtn addTarget:self action:@selector(clickTheSaveButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:saveBtn];
+        
+        UIButton *favoBtn = [[UIButton alloc]init];
+        NSArray *arr = [[NSUserDefaults standardUserDefaults]arrayForKey:kFavorite];
+        _isFavor = NO;
+        for (NSDictionary *dic in arr) {
+            if ([dic[@"_thumb"]isEqualToString:_url]) {
+                _isFavor = YES;
+                break;
+            }
+        }
+        [favoBtn setImage:[UIImage imageNamed:@"favor_false"] forState:UIControlStateNormal];
+        [favoBtn setImage:[UIImage imageNamed:@"favor_true"] forState:UIControlStateSelected];
+        [favoBtn addTarget:self action:@selector(clickTheFavoriteButton:) forControlEvents:UIControlEventTouchUpInside];
+        favoBtn.selected = _isFavor;
+        [self.view addSubview:favoBtn];
+        
         [saveBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(42);
-            make.centerY.equalTo(shareBtn);
-            make.left.equalTo(shareBtn.mas_right).offset(30);
+            make.top.equalTo(_imageView.mas_bottom).offset(20);
+            make.centerX.equalTo(_imageView);
         }];
-        [shareBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(_imageView).offset(-55);
+        [shareBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(42);
+            make.centerY.equalTo(saveBtn);
+            make.right.equalTo(saveBtn.mas_left).offset(-30);
+        }];
+        [favoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(54);
+            make.centerY.equalTo(saveBtn);
+            make.left.equalTo(saveBtn.mas_right).offset(20);
         }];
         
         
@@ -72,9 +96,9 @@
     _currentPage = page;
     if (page < _dataArr.count) {
         NSDictionary *dic = _dataArr[page];
-        NSString *url = dic[@"_thumb"];
+        _url = dic[@"_thumb"];
         __weak YYAnimatedImageView *imgView = _imageView;
-        [_imageView yy_setImageWithURL:[NSURL URLWithString:url] placeholder:nil options:YYWebImageOptionProgressive|YYWebImageOptionAllowBackgroundTask|YYWebImageOptionShowNetworkActivity completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+        [_imageView yy_setImageWithURL:[NSURL URLWithString:_url] placeholder:nil options:YYWebImageOptionProgressive|YYWebImageOptionAllowBackgroundTask|YYWebImageOptionShowNetworkActivity completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
             if (stage != YYWebImageStageProgress || error
                 ) {
                 [self hideHudView];
@@ -164,5 +188,28 @@
     }];
 }
 
+-(void)clickTheFavoriteButton:(UIButton*)btn{
+    NSMutableArray *arr = [[[NSUserDefaults standardUserDefaults]arrayForKey:kFavorite]mutableCopy];
+    
+    if (btn.isSelected) {// 收藏-> 取消
+        for (NSDictionary *dic in arr) {
+            if ([dic[@"_thumb"]isEqualToString:_url]) {
+                [arr removeObject:dic];
+                break;
+            }
+        }
+        [self showMessage:@"取消成功"];
+    }else{//收藏
+        if (arr == nil) {
+            arr = [NSMutableArray array];
+        }
+        [arr addObject:@{@"_thumb":_url}];
+        [self showMessage:@"收藏成功"];
+    }
+    
+    btn.selected = !btn.isSelected;
+    [[NSUserDefaults standardUserDefaults]setObject:arr forKey:kFavorite];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
 
 @end

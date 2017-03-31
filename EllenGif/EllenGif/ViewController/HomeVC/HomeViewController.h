@@ -8,6 +8,11 @@
 
 #import "BaseViewController.h"
 
-@interface HomeViewController : BaseViewController
+@interface HomeViewController : BaseViewController{
+    NSMutableArray *_dataArr;
+    UICollectionView *_collectionView;
+    UITextField *_field;
+
+}
 
 @end

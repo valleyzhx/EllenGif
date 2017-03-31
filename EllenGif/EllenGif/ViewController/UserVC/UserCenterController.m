@@ -14,6 +14,7 @@
 #import "UzysAssetsPickerController.h"
 #import "WXApiRequestHandler.h"
 #import "GifViewController.h"
+#import "FavorViewController.h"
 
 
 #define imageHeight 230
@@ -28,11 +29,11 @@
 }
 
 - (void)viewDidLoad {
-    self.naviType = GGNavigationBarTypeNone;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = viewBGColor;
-    
+    self.naviType = GGNavigationBarTypeNone;
+
     [self setHeaderImage];
     
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -53,7 +54,7 @@
         lab;
     });
     
-    _titleArr = @[@[@"给个好评",@"分享APP"],@[@"每日一句"],@[@"打开相册照片"],@[@"清除缓存"]];
+    _titleArr = @[@[@"我的收藏",@"打开相册照片"],@[@"给个好评",@"分享APP"],@[@"每日一句"],@[@"清除缓存"]];
 }
 
 -(void)setHeaderImage{
@@ -129,7 +130,7 @@
     
     NSString *title = _titleArr[indexPath.section][indexPath.row];
     
-    if ([title isEqualToString:@"每日一句"]) {
+    if ([title isEqualToString:@"每日一句"]||[title isEqualToString:@"我的收藏"]) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     cell.textLabel.text = title;
@@ -150,6 +151,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSString *title = _titleArr[indexPath.section][indexPath.row];
+    
+    if ([title isEqualToString:@"我的收藏"]) {
+        FavorViewController *controller = [[FavorViewController alloc]init];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 
     if ([title isEqualToString:@"意见反馈"]) {
         [self presentViewController:[UMFeedback feedbackModalViewController] animated:YES completion:nil];

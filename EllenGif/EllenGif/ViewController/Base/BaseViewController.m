@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "MyDefines.h"
+#import "Reachability.h"
 
 
 #define IS_OS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
@@ -18,6 +19,8 @@
 
 @implementation BaseViewController{
     BOOL isLoading;
+    GADBannerView *_adView;
+
 }
 
 - (void)viewDidLoad {
@@ -36,7 +39,7 @@
         
         [self.view addSubview:_tableView];
     }
-    _naviBar = [self setUpNaviViewWithType:_naviType];
+    _naviBar = [self setUpNaviViewWithType:GGNavigationBarTypeNormal];
     _naviBar.title = @"EllenGIF";
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
@@ -71,6 +74,12 @@
         make.top.equalTo(view.mas_bottom);
     }];
     return view;
+}
+
+-(void)setNaviType:(GGNavigationBarType)naviType{
+    
+    _naviBar = [self setUpNaviViewWithType:naviType];
+    
 }
 
 -(void)clickedBackAction:(UIButton*)btn{
@@ -131,6 +140,36 @@
 {
     return UIStatusBarStyleLightContent;
 }
+
+
+#pragma mark- CheckWifi
+-(void)checkWIFI{
+    Reachability *ability = [Reachability reachabilityForLocalWiFi];
+    if ([ability isReachableViaWiFi] == NO) { // 流量
+        [self showMessage:@"土豪，您在使用流量哦"];
+    }
+}
+
+
+#pragma mark- AD
+
+-(void)loadBottomADView{
+    _adView = [[GADBannerView alloc]
+               initWithAdSize:kGADAdSizeBanner origin:CGPointMake((SCREEN_WIDTH-320)/2, 50)];
+    _adView.adUnitID = @"ca-app-pub-7534063156170955/9242353223";//调用id
+    
+    _adView.rootViewController = self;
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 110)];
+    [view addSubview:_adView];
+    self.tableView.tableFooterView = view;
+    GADRequest *req = [GADRequest request];
+#if DEBUG
+    req.testDevices = @[@"5610fbd8aa463fcd021f9f235d9f6ba1"];
+#endif
+    [_adView loadRequest:req];
+}
+
+
 
 -(void)dealloc{
     _tableView = nil;

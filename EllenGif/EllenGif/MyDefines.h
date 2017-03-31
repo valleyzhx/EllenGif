@@ -18,7 +18,7 @@
 #define kAppStoreComendUrl @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1158784553"
 
 #define kInitKeyword @"SearchWordDefult"
-
+#define kFavorite @"favorite"
 
 
 #define appDelegate                     ((AppDelegate *)[[UIApplication sharedApplication] delegate])
@@ -54,7 +54,7 @@
 #define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
 #define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
 #define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
-
+#define IS_IOS10 ([[[UIDevice currentDevice]systemVersion]floatValue] >= 10.0)
 //系数
 #define timesOf320  (MAX(1, (SCREEN_WIDTH/320)*1))
 

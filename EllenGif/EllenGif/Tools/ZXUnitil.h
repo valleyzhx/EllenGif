@@ -13,7 +13,7 @@
 + (BOOL)isIPAddress:(NSString*)ipString;
 + (BOOL)isMobileNumber:(NSString *)mobileNum;
 + (BOOL) isIdentityCard: (NSString *)identityCard;
-+ (void)fitTheLabel:(UILabel*)label;
++ (void)fitTheLabel:(UILabel*)label withMaxHeight:(float)maxHeight;
 + (float)heightOfStringWithString:(NSString*)str font:(UIFont*)font width:(float)width;
 +(UIImage *)compressImageWith:(UIImage *)image width:(float)width height:(float)height;
 + (BOOL)version:(NSString *)oldver lessthan:(NSString *)newver;

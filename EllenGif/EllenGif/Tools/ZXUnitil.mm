@@ -66,10 +66,10 @@ static ZXUnitil *_unitil;
         return NO;
     }
 }
-+(void)fitTheLabel:(UILabel *)label{
++(void)fitTheLabel:(UILabel *)label withMaxHeight:(float)maxHeight{
     float height = [self heightOfStringWithString:label.text font:label.font width:label.frame.size.width];
     CGRect rect = label.frame;
-    rect.size.height = height;
+    rect.size.height = MIN(height, maxHeight);
     label.frame = rect;
 }
 

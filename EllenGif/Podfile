@@ -11,5 +11,5 @@ target :EllenGif do
     pod 'UMengAnalytics'
     pod 'Firebase/AdMob'
     pod 'UzysAssetsPickerController'
-
+    pod 'Mantle', '~>1.5.8'
 end

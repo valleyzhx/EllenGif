@@ -31,12 +31,28 @@
 		F04581CC1D76BCFE00C3FDB7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F04581CB1D76BCFE00C3FDB7 /* libz.tbd */; };
 		F04581CE1D76BD0600C3FDB7 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F04581CD1D76BD0600C3FDB7 /* libsqlite3.0.tbd */; };
 		F04581D01D76BD9100C3FDB7 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F04581CF1D76BD9100C3FDB7 /* libc++.1.tbd */; };
+		F04586741E8259F100C53773 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04586711E8259F100C53773 /* VideoViewController.m */; };
+		F04586751E8259F100C53773 /* VideoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04586731E8259F100C53773 /* VideoListController.m */; };
+		F04586781E8259FF00C53773 /* VideoListBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04586771E8259FF00C53773 /* VideoListBaseController.m */; };
+		F0AAB2AD1E83A088004E6EF4 /* VideoListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AAB2AA1E83A088004E6EF4 /* VideoListModel.m */; };
+		F0AAB2AE1E83A088004E6EF4 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AAB2AC1E83A088004E6EF4 /* VideoModel.m */; };
+		F0AAB2B11E83A16B004E6EF4 /* GGRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AAB2B01E83A16B004E6EF4 /* GGRequest.m */; };
+		F0AAB2B51E83A32F004E6EF4 /* EllenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AAB2B41E83A32F004E6EF4 /* EllenModel.m */; };
+		F0AAB2B81E83A475004E6EF4 /* EllenModel+GGRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AAB2B71E83A475004E6EF4 /* EllenModel+GGRequest.m */; };
+		F0AAB2BC1E83ADA0004E6EF4 /* VideoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AAB2BA1E83ADA0004E6EF4 /* VideoListCell.m */; };
+		F0AAB2BD1E83ADA0004E6EF4 /* VideoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AAB2BB1E83ADA0004E6EF4 /* VideoListCell.xib */; };
+		F0AAB2C31E83AE4D004E6EF4 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AAB2C21E83AE4D004E6EF4 /* UserModel.m */; };
+		F0AAB2C61E83B00A004E6EF4 /* AuthorVideoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AAB2C51E83B00A004E6EF4 /* AuthorVideoListController.m */; };
+		F0AAB2C81E83B209004E6EF4 /* video.html in Resources */ = {isa = PBXBuildFile; fileRef = F0AAB2C71E83B209004E6EF4 /* video.html */; };
+		F0AAB2CB1E83C33E004E6EF4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AAB2CA1E83C33E004E6EF4 /* Reachability.m */; };
+		F0AAB2CE1E83C4AE004E6EF4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AAB2CD1E83C4AE004E6EF4 /* SearchViewController.m */; };
 		F0B1A05F1D76A7160083C7F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B1A05E1D76A7160083C7F8 /* main.m */; };
 		F0B1A0621D76A7160083C7F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B1A0611D76A7160083C7F8 /* AppDelegate.m */; };
 		F0B1A0681D76A7160083C7F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B1A0661D76A7160083C7F8 /* Main.storyboard */; };
 		F0B1A06A1D76A7160083C7F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0B1A0691D76A7160083C7F8 /* Assets.xcassets */; };
 		F0B1A06D1D76A7160083C7F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B1A06B1D76A7160083C7F8 /* LaunchScreen.storyboard */; };
 		F0BF4A001D94D1F50032F5B8 /* GGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF49FF1D94D1F50032F5B8 /* GGNavigationController.m */; };
+		F0D420601E039DE500E596F0 /* FavorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D4205F1E039DE500E596F0 /* FavorViewController.m */; };
 		F0E5DA8C1D92A90B007A73F3 /* LaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E5DA8B1D92A90B007A73F3 /* LaunchView.m */; };
 		F0E5E68F1D936D3C00924C1D /* UserCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E5E68E1D936D3C00924C1D /* UserCenterController.m */; };
 		F0E5E6921D936ECC00924C1D /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E5E6911D936ECC00924C1D /* ADViewController.m */; };
@@ -92,6 +108,34 @@
 		F04581CB1D76BCFE00C3FDB7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F04581CD1D76BD0600C3FDB7 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		F04581CF1D76BD9100C3FDB7 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		F04586701E8259F100C53773 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		F04586711E8259F100C53773 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		F04586721E8259F100C53773 /* VideoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListController.h; sourceTree = "<group>"; };
+		F04586731E8259F100C53773 /* VideoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListController.m; sourceTree = "<group>"; };
+		F04586761E8259FF00C53773 /* VideoListBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListBaseController.h; sourceTree = "<group>"; };
+		F04586771E8259FF00C53773 /* VideoListBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListBaseController.m; sourceTree = "<group>"; };
+		F0AAB2A91E83A088004E6EF4 /* VideoListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListModel.h; sourceTree = "<group>"; };
+		F0AAB2AA1E83A088004E6EF4 /* VideoListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListModel.m; sourceTree = "<group>"; };
+		F0AAB2AB1E83A088004E6EF4 /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		F0AAB2AC1E83A088004E6EF4 /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		F0AAB2AF1E83A16B004E6EF4 /* GGRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGRequest.h; sourceTree = "<group>"; };
+		F0AAB2B01E83A16B004E6EF4 /* GGRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGRequest.m; sourceTree = "<group>"; };
+		F0AAB2B31E83A32F004E6EF4 /* EllenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EllenModel.h; sourceTree = "<group>"; };
+		F0AAB2B41E83A32F004E6EF4 /* EllenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EllenModel.m; sourceTree = "<group>"; };
+		F0AAB2B61E83A475004E6EF4 /* EllenModel+GGRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EllenModel+GGRequest.h"; sourceTree = "<group>"; };
+		F0AAB2B71E83A475004E6EF4 /* EllenModel+GGRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EllenModel+GGRequest.m"; sourceTree = "<group>"; };
+		F0AAB2B91E83ADA0004E6EF4 /* VideoListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListCell.h; sourceTree = "<group>"; };
+		F0AAB2BA1E83ADA0004E6EF4 /* VideoListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListCell.m; sourceTree = "<group>"; };
+		F0AAB2BB1E83ADA0004E6EF4 /* VideoListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListCell.xib; sourceTree = "<group>"; };
+		F0AAB2C11E83AE4D004E6EF4 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		F0AAB2C21E83AE4D004E6EF4 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		F0AAB2C41E83B00A004E6EF4 /* AuthorVideoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorVideoListController.h; sourceTree = "<group>"; };
+		F0AAB2C51E83B00A004E6EF4 /* AuthorVideoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorVideoListController.m; sourceTree = "<group>"; };
+		F0AAB2C71E83B209004E6EF4 /* video.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = video.html; sourceTree = "<group>"; };
+		F0AAB2C91E83C33E004E6EF4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F0AAB2CA1E83C33E004E6EF4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		F0AAB2CC1E83C4AE004E6EF4 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		F0AAB2CD1E83C4AE004E6EF4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		F0B1A05A1D76A7160083C7F8 /* EllenGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EllenGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B1A05E1D76A7160083C7F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0B1A0601D76A7160083C7F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,6 +146,8 @@
 		F0B1A06E1D76A7160083C7F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0BF49FE1D94D1F50032F5B8 /* GGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGNavigationController.h; sourceTree = "<group>"; };
 		F0BF49FF1D94D1F50032F5B8 /* GGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGNavigationController.m; sourceTree = "<group>"; };
+		F0D4205E1E039DE500E596F0 /* FavorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavorViewController.h; sourceTree = "<group>"; };
+		F0D4205F1E039DE500E596F0 /* FavorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavorViewController.m; sourceTree = "<group>"; };
 		F0E5DA8A1D92A90B007A73F3 /* LaunchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchView.h; sourceTree = "<group>"; };
 		F0E5DA8B1D92A90B007A73F3 /* LaunchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchView.m; sourceTree = "<group>"; };
 		F0E5E68D1D936D3C00924C1D /* UserCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterController.h; sourceTree = "<group>"; };
@@ -160,6 +206,7 @@
 		F005082E1D910B7A009B8CBC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F045866F1E8259CE00C53773 /* VideoVC */,
 				F0E5E68C1D936BB200924C1D /* UserVC */,
 				F00508631D910ECC009B8CBC /* HomeVC */,
 				F00508321D910BD0009B8CBC /* Base */,
@@ -185,6 +232,10 @@
 		F005083C1D910EA2009B8CBC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F0AAB2C91E83C33E004E6EF4 /* Reachability.h */,
+				F0AAB2CA1E83C33E004E6EF4 /* Reachability.m */,
+				F0AAB2AF1E83A16B004E6EF4 /* GGRequest.h */,
+				F0AAB2B01E83A16B004E6EF4 /* GGRequest.m */,
 				F0E5E6A11D9381F300924C1D /* UIViewAdditions.h */,
 				F0E5E6A21D9381F300924C1D /* UIViewAdditions.m */,
 				F005083D1D910EA2009B8CBC /* MBProgressHUD+string.h */,
@@ -258,6 +309,52 @@
 			path = SDKExport;
 			sourceTree = "<group>";
 		};
+		F045866F1E8259CE00C53773 /* VideoVC */ = {
+			isa = PBXGroup;
+			children = (
+				F04586761E8259FF00C53773 /* VideoListBaseController.h */,
+				F04586771E8259FF00C53773 /* VideoListBaseController.m */,
+				F04586701E8259F100C53773 /* VideoViewController.h */,
+				F04586711E8259F100C53773 /* VideoViewController.m */,
+				F04586721E8259F100C53773 /* VideoListController.h */,
+				F04586731E8259F100C53773 /* VideoListController.m */,
+				F0AAB2C41E83B00A004E6EF4 /* AuthorVideoListController.h */,
+				F0AAB2C51E83B00A004E6EF4 /* AuthorVideoListController.m */,
+				F0AAB2CC1E83C4AE004E6EF4 /* SearchViewController.h */,
+				F0AAB2CD1E83C4AE004E6EF4 /* SearchViewController.m */,
+				F0AAB2B91E83ADA0004E6EF4 /* VideoListCell.h */,
+				F0AAB2BA1E83ADA0004E6EF4 /* VideoListCell.m */,
+				F0AAB2BB1E83ADA0004E6EF4 /* VideoListCell.xib */,
+				F0AAB2C71E83B209004E6EF4 /* video.html */,
+			);
+			path = VideoVC;
+			sourceTree = "<group>";
+		};
+		F0AAB2A81E83A036004E6EF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0AAB2B21E83A2CC004E6EF4 /* Base */,
+				F0AAB2A91E83A088004E6EF4 /* VideoListModel.h */,
+				F0AAB2AA1E83A088004E6EF4 /* VideoListModel.m */,
+				F0AAB2AB1E83A088004E6EF4 /* VideoModel.h */,
+				F0AAB2AC1E83A088004E6EF4 /* VideoModel.m */,
+				F0AAB2C11E83AE4D004E6EF4 /* UserModel.h */,
+				F0AAB2C21E83AE4D004E6EF4 /* UserModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0AAB2B21E83A2CC004E6EF4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F0AAB2B31E83A32F004E6EF4 /* EllenModel.h */,
+				F0AAB2B41E83A32F004E6EF4 /* EllenModel.m */,
+				F0AAB2B61E83A475004E6EF4 /* EllenModel+GGRequest.h */,
+				F0AAB2B71E83A475004E6EF4 /* EllenModel+GGRequest.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		F0B1A0511D76A7160083C7F8 = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +384,7 @@
 				F0B1A0661D76A7160083C7F8 /* Main.storyboard */,
 				F0E5DA8A1D92A90B007A73F3 /* LaunchView.h */,
 				F0E5DA8B1D92A90B007A73F3 /* LaunchView.m */,
+				F0AAB2A81E83A036004E6EF4 /* Model */,
 				F005083C1D910EA2009B8CBC /* Tools */,
 				F00508411D910EA2009B8CBC /* WeChatShare */,
 				F005082E1D910B7A009B8CBC /* ViewController */,
@@ -315,6 +413,8 @@
 				F0E5E6911D936ECC00924C1D /* ADViewController.m */,
 				F0E5E68D1D936D3C00924C1D /* UserCenterController.h */,
 				F0E5E68E1D936D3C00924C1D /* UserCenterController.m */,
+				F0D4205E1E039DE500E596F0 /* FavorViewController.h */,
+				F0D4205F1E039DE500E596F0 /* FavorViewController.m */,
 			);
 			path = UserVC;
 			sourceTree = "<group>";
@@ -326,12 +426,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0B1A0711D76A7160083C7F8 /* Build configuration list for PBXNativeTarget "EllenGif" */;
 			buildPhases = (
-				ADD520CD2C61441D6BC35009 /* 📦 Check Pods Manifest.lock */,
+				ADD520CD2C61441D6BC35009 /* [CP] Check Pods Manifest.lock */,
 				F0B1A0561D76A7160083C7F8 /* Sources */,
 				F0B1A0571D76A7160083C7F8 /* Frameworks */,
 				F0B1A0581D76A7160083C7F8 /* Resources */,
-				0FB021F07A6B1212879F6132 /* 📦 Embed Pods Frameworks */,
-				50CD635B30F22F22F99BD608 /* 📦 Copy Pods Resources */,
+				0FB021F07A6B1212879F6132 /* [CP] Embed Pods Frameworks */,
+				50CD635B30F22F22F99BD608 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -353,8 +453,12 @@
 				TargetAttributes = {
 					F0B1A0591D76A7160083C7F8 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = BZ2BR27C6A;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -382,8 +486,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0B1A06D1D76A7160083C7F8 /* LaunchScreen.storyboard in Resources */,
+				F0AAB2BD1E83ADA0004E6EF4 /* VideoListCell.xib in Resources */,
 				F0B1A06A1D76A7160083C7F8 /* Assets.xcassets in Resources */,
 				F03CC68F1D911053004EEED7 /* read_me.txt in Resources */,
+				F0AAB2C81E83B209004E6EF4 /* video.html in Resources */,
 				F0B1A0681D76A7160083C7F8 /* Main.storyboard in Resources */,
 				F03CC6901D911053004EEED7 /* README.txt in Resources */,
 				F0E5E6941D9371D300924C1D /* GoogleService-Info.plist in Resources */,
@@ -393,14 +499,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0FB021F07A6B1212879F6132 /* 📦 Embed Pods Frameworks */ = {
+		0FB021F07A6B1212879F6132 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,14 +514,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EllenGif/Pods-EllenGif-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		50CD635B30F22F22F99BD608 /* 📦 Copy Pods Resources */ = {
+		50CD635B30F22F22F99BD608 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,19 +529,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EllenGif/Pods-EllenGif-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ADD520CD2C61441D6BC35009 /* 📦 Check Pods Manifest.lock */ = {
+		ADD520CD2C61441D6BC35009 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -445,9 +551,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0AAB2B81E83A475004E6EF4 /* EllenModel+GGRequest.m in Sources */,
 				F005085F1D910EA2009B8CBC /* WXMediaMessage+messageConstruct.m in Sources */,
 				F005085B1D910EA2009B8CBC /* WXApiRequestHandler.m in Sources */,
 				F0E5E6A31D9381F300924C1D /* UIViewAdditions.m in Sources */,
+				F0AAB2C61E83B00A004E6EF4 /* AuthorVideoListController.m in Sources */,
 				F00508581D910EA2009B8CBC /* MBProgressHUD+string.m in Sources */,
 				F005083B1D910BD0009B8CBC /* GGNavigationBar.m in Sources */,
 				F005085D1D910EA2009B8CBC /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
@@ -458,15 +566,27 @@
 				F03CC6961D9118B0004EEED7 /* HomeViewController.m in Sources */,
 				F0E5E6921D936ECC00924C1D /* ADViewController.m in Sources */,
 				F005085A1D910EA2009B8CBC /* WXApiManager.m in Sources */,
+				F0AAB2C31E83AE4D004E6EF4 /* UserModel.m in Sources */,
 				F0E5DA8C1D92A90B007A73F3 /* LaunchView.m in Sources */,
+				F04586781E8259FF00C53773 /* VideoListBaseController.m in Sources */,
+				F04586741E8259F100C53773 /* VideoViewController.m in Sources */,
 				F005085E1D910EA2009B8CBC /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
 				F045819F1D76AD1700C3FDB7 /* EllenCollectionCell.m in Sources */,
 				F005085C1D910EA2009B8CBC /* WXApiResponseHandler.m in Sources */,
+				F0AAB2CE1E83C4AE004E6EF4 /* SearchViewController.m in Sources */,
+				F0AAB2AE1E83A088004E6EF4 /* VideoModel.m in Sources */,
 				F0BF4A001D94D1F50032F5B8 /* GGNavigationController.m in Sources */,
+				F0AAB2CB1E83C33E004E6EF4 /* Reachability.m in Sources */,
+				F0AAB2AD1E83A088004E6EF4 /* VideoListModel.m in Sources */,
 				F00508591D910EA2009B8CBC /* ZXUnitil.mm in Sources */,
 				F0E5E68F1D936D3C00924C1D /* UserCenterController.m in Sources */,
+				F0D420601E039DE500E596F0 /* FavorViewController.m in Sources */,
 				F0B1A0621D76A7160083C7F8 /* AppDelegate.m in Sources */,
 				F0B1A05F1D76A7160083C7F8 /* main.m in Sources */,
+				F0AAB2B11E83A16B004E6EF4 /* GGRequest.m in Sources */,
+				F0AAB2BC1E83ADA0004E6EF4 /* VideoListCell.m in Sources */,
+				F0AAB2B51E83A32F004E6EF4 /* EllenModel.m in Sources */,
+				F04586751E8259F100C53773 /* VideoListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +701,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BZ2BR27C6A;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EllenGif/PrefixHeader.pch";
 				INFOPLIST_FILE = EllenGif/Info.plist;
@@ -605,7 +725,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = BZ2BR27C6A;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EllenGif/PrefixHeader.pch";
@@ -619,8 +739,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xianng.com.EllenGif;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "9180b2df-44d8-466a-974d-100fa8368b83";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: xianng.com.EllenGif";
 			};
 			name = Release;
 		};

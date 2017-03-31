@@ -19,23 +19,26 @@
     [super viewDidLoad];
     [self setAppearanceUI];
     self.tabBar.backgroundColor = [UIColor whiteColor];
-    UITabBarItem *tabBarItem0 = [self.tabBar.items objectAtIndex:0];
-    UITabBarItem *tabBarItem2 = [self.tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarHome = [self.tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarVideo = [self.tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarUser = [self.tabBar.items objectAtIndex:2];
 
     
-    tabBarItem0.selectedImage = [[UIImage imageNamed:@"home_selected"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    tabBarItem0.image = [[UIImage imageNamed:@"home_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [tabBarItem0 setTitle:@"首页"];
-    tabBarItem0.imageInsets = UIEdgeInsetsMake(7, 0, -7, 0);
-    tabBarItem0.titlePositionAdjustment = UIOffsetMake(0, -2);
+    tabBarHome.selectedImage = [[UIImage imageNamed:@"home_selected"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarHome.image = [[UIImage imageNamed:@"home_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [tabBarHome setTitle:@"首页"];
+    tabBarHome.imageInsets = UIEdgeInsetsMake(7, 0, -7, 0);
+    tabBarHome.titlePositionAdjustment = UIOffsetMake(0, -2);
     
+    tabBarVideo.selectedImage = [[UIImage imageNamed:@"live_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarVideo.image = [[UIImage imageNamed:@"live_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [tabBarVideo setTitle:@"视频"];
     
-    
-    tabBarItem2.selectedImage = [[UIImage imageNamed:@"profile_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    tabBarItem2.image = [[UIImage imageNamed:@"profile_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [tabBarItem2 setTitle:@"我的"];
-    tabBarItem2.imageInsets = UIEdgeInsetsMake(7, 0, -7, 0);
-    tabBarItem2.titlePositionAdjustment = UIOffsetMake(0, -2);
+    tabBarUser.selectedImage = [[UIImage imageNamed:@"profile_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarUser.image = [[UIImage imageNamed:@"profile_unselected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [tabBarUser setTitle:@"我的"];
+    tabBarUser.imageInsets = UIEdgeInsetsMake(7, 0, -7, 0);
+    tabBarUser.titlePositionAdjustment = UIOffsetMake(0, -2);
 }
 
 -(void)setAppearanceUI{

@@ -28,10 +28,12 @@
     config.appKey = MobClick_ID;
     [MobClick startWithConfigure:config];
 //    [FIRApp configure];
+    
+//    [JSPatch startWithAppKey:@"7d5bb87d8626b8f3"];
+//    [JSPatch sync];
    
 
     [self.window makeKeyAndVisible];
-    
     [[LaunchView defultVIew]showInView:KeyWindow];
     
     return YES;

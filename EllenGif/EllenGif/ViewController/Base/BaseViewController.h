@@ -11,6 +11,7 @@
 #import "MJRefresh.h"
 #import <UMMobClick/MobClick.h>
 #import "MBProgressHUD+string.h"
+#import <GoogleMobileAds/GoogleMobileAds.h>
 
 #define orgX 16
 
@@ -26,12 +27,17 @@
 
 @property (nonatomic,assign) BOOL showGDTADView;
 
-@property (nonatomic,assign) GGNavigationBarType naviType;
-
+-(void)setNaviType:(GGNavigationBarType)naviType;
 
 -(void)showHudView;
 -(void)hideHudView;
 
 -(void)showMessage:(NSString*)message;
+
+
+-(void)checkWIFI;
+
+-(void)loadBottomADView;
+
 
 @end
