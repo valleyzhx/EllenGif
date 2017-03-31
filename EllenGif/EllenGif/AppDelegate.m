@@ -11,7 +11,6 @@
 #import "LaunchView.h"
 #import <UMMobClick/MobClick.h>
 #import <FirebaseAnalytics/FIRApp.h>
-#import <JSPatchPlatform/JSPatch.h>
 
 @interface AppDelegate ()
 
