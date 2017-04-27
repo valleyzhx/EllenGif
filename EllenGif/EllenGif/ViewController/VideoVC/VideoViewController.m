@@ -99,9 +99,11 @@
         return;
     }
     
-    NSString *bundle = [[NSBundle mainBundle]pathForResource:@"video" ofType:@"html"];
-    bundle = [bundle stringByAppendingFormat:@"?videoid=%@",_videoObject.ellenId];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:bundle]];
+//    NSString *bundle = [[NSBundle mainBundle]pathForResource:@"video" ofType:@"html"];
+//    bundle = [bundle stringByAppendingFormat:@"?videoid=%@",_videoObject.ellenId];
+    NSString *url = [@"https://xianng.com/videoplay/video.html?videoid=" stringByAppendingString:_videoObject.ellenId];
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [_webView loadRequest:request];
     [self.view bringSubviewToFront:_naviBar];
 }
